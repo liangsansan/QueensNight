@@ -1,12 +1,13 @@
 <template>
 	<div>
-		<h2>home</h2>
+		<h1>111</h1>
 	</div>
 </template>
 
+
 <script type="text/javascript">
-	import './home.scss'
-	
+	import './footer.scss'
+
 	export default {
 		components: {
 			
