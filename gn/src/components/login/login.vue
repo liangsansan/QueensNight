@@ -37,6 +37,7 @@
 				if($('form').valid()){
 					this.$store.dispatch('login', {username: this.username, password: this.pwd})
 				}
+				// this.$store.state.login.data
 			}
 			// ...mapActions(['login'])
 		}

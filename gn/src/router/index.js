@@ -4,8 +4,6 @@ import http from '../utils/HttpClient'
 
 import HomeComponent from '../components/home/home.vue'
 import LoginComponent from '../components/login/login.vue'
-import Clients from '../components/clients/clients.vue'
-import Client from '../components/client/client.vue'
 
 Vue.use(VueRouter)
 
@@ -14,10 +12,18 @@ const router = new VueRouter({
 		path: '/',
 		name: 'home',
 		component: HomeComponent,
-		children: [{
+		// children: [{
 		
-		}]
-	}]
+		// }]
+	},{
+		path: '/login',
+		name: 'login',
+		component: LoginComponent,
+		// children: [{
+		
+		// }]
+	}
+	]
 })
 
 // 对将要进入的路由进行权判断
