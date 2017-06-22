@@ -14,6 +14,7 @@
 <script>
   import spinner from './components/spinner/spinner.vue'
   import foot from './components/footer/footer.vue'
+
   export default {
     components: {
       spinner,
@@ -24,6 +25,7 @@
 
 <style lang="scss">
   #app {
+    
     position: relative;
     width: 100%;
     height: 100%;
@@ -34,6 +36,7 @@
   }
   #main{
     flex: 1;
+    overflow-y: hidden;
   }
   #foot{
     height: 65px;

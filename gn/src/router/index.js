@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
 import HomeComponent from '../components/home/home.vue'
-
-
+import Details from '../components/dzy_details/dzy_details.vue'
+import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -15,6 +15,15 @@ const router = new VueRouter({
 		// children: [{
 		
 		// }]
+		},{
+			path:'/details',
+			name:'details',
+			component:Details,
+			children:[{
+				path:'/wenxiong',
+				name:'wenxiong',
+				component:Wenxiong
+			}]
 		}]
 })
 
