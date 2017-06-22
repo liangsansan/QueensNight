@@ -1,6 +1,7 @@
 import './assets/bootstrap/css/bootstrap.min.css'
 import './assets/common/common.scss'
-import './assets/font-awesome/css/font-awesome.min.css'
+import './assets/iconfont/iconfont.css'
+import  './assets/common/H-ui.reset.css'
 import './assets/jquery-confirm/jquery-confirm.css'
 // import './assets/bootstrap/css/hp.min.css'
 import './assets/bootstrap/datepicker/css/datepicker.css'
