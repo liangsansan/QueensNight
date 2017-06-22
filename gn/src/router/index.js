@@ -4,7 +4,7 @@ import http from '../utils/HttpClient'
 
 import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
-import LoginComponent from '../components/login/login.vue'
+
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,7 @@ const router = new VueRouter({
 		path: '/',
 		name: 'home',
 		component: HomeComponent,
-		children: []
+	
 	},{
 		path: '/login',
 		name: 'login',
@@ -22,6 +22,7 @@ const router = new VueRouter({
 		path:'/mine',
 		name:'mine',
 		component:MineComponent
+
 	}]
 })
 
