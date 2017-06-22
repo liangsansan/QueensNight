@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
 import HomeComponent from '../components/home/home.vue'
-import LoginComponent from '../components/login/login.vue'
+
 
 Vue.use(VueRouter)
 
@@ -15,15 +15,7 @@ const router = new VueRouter({
 		// children: [{
 		
 		// }]
-	},{
-		path: '/login',
-		name: 'login',
-		component: LoginComponent,
-		// children: [{
-		
-		// }]
-	}
-	]
+		}]
 })
 
 // 对将要进入的路由进行权判断
