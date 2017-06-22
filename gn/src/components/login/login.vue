@@ -1,23 +1,62 @@
 <template>
-	<div class="login-box">
-		<div class="col-sm-12 b-r">
-			<h3 class="m-t-none m-b">登录</h3>
-			<form role="form">
-			    <div class="form-group text-left">
-			        <label>用户名：</label>
-			        <input type="text" v-model="username" name="username" placeholder="请输入用户名" class="form-control required">
-			    </div>
-			    <div class="form-group  text-left">
-			        <label>密码：</label>
-			        <input type="password" v-model="pwd" name="password" placeholder="请输入密码" class="form-control required">
-			    </div>
-			    <div>
-			    	<input type="button" class="btn btn-primary pull-right m-t-n-xs" value="登录" @click="login">
-			    </div>
-			</form>
-		</div>
-		<div class="copyright">2017 © dk by www.dk-lan.com</div>
-	</div>
+	<div id="login" >
+		<header>
+			<div class="hb-nav">
+				<div class="btnl">
+					<i class="icon iconfont icon-fanhui"></i>
+				</div>
+				<span >登录</span>
+			</div>
+		</header>
+		<article>
+			<div class="hbmain-content">
+				<form action="">
+					<div class="input-group">
+						<span class="input-group-addon">用户名:</span>
+						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">密码 : </span>
+						<input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">验证码 : </span>
+						<input type="text" class="form-control" placeholder="verification" aria-describedby="basic-addon1">
+					</div>
+					<p class="rem_id clearfix">
+						<label id="choose_bgi" class="">
+							<input class="" type="checkbox" name="is_remember" checked="checked">
+							记住账号
+						</label>
+						<a href="#" class="flr">忘记密码</a>
+					</p>
+					<button type="button" class="btn btn-default">注册</button>
+					<button type="button" class="btn btn-primary btn-success flr">登录</button>
+
+				</form>
+				<div class="cooperate-login">
+					<h3>选择其他方式登录</h3>
+						<ul class="cooper-link">
+							<li>
+								<a href="#">
+									<i class="icon iconfont icon-qq"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="icon iconfont icon-xinlangweibo"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="icon iconfont icon-weixin"></i>
+								</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+		</article>
+    </div>
 </template>
 
 <script type="text/javascript">
@@ -28,13 +67,7 @@
 	export default {
 
 			login: function(event){
-				if($('form').valid()){
-					this.$store.dispatch('login', {username: this.username, password: this.pwd})
-				}
-				// this.$store.state.login.data
 			}
-			// ...mapActions(['login'])
-
 		}
 	
 </script>
