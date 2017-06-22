@@ -13,9 +13,11 @@ const router = new VueRouter({
 		name: 'home',
 		component: HomeComponent,
 		// children: [{
-		
+		// 	path: '/details',
+		// 	name: 'details',
+		// 	component: HomeComponent,
 		// }]
-		}]
+	}]
 })
 
 // 对将要进入的路由进行权判断

@@ -1,19 +1,197 @@
+@import '../../assets/common/global.scss';
+@import '../../assets/iconfont/iconfont.css';
+@import '../../assets/swiper/swiper-3.4.2.min.css';
+// @import '../../assets/animate.min.css';
+
 .home_page{
     display: flex;
+    flex-direction: column;
+    overflow: scroll;
     width: 100%;
+    height: 100%;
     .home_top{
-        // height: 80px; 
-            width: 100%;
+        height: 80px; 
+        width: 100%;
         .home_logo{
-            height: .46875rem;
+            height: 40px;
+            line-height: 40px;
             width: 100%;
             background-image: url('../../assets/ly-use/logo.png');
             background-size: cover;
+            span{
+                display:block;
+                float: right;
+                margin-right: 15px;
+                color: red;
+                font-size: 14px;
+            }
         }
-        .home_body{
-            height: 20px;
-            width: 100px;
-            background-color: #ff0080;
+        .home_search{
+            height: 40px;
+            background-color:$mainColorw;
+            overflow: hidden;
+            label{
+                span{
+                    display:block;
+                    float: left;
+                    width: 80px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 5px;
+                    padding:0 15px;
+                    font-size: 16px;
+                    color:$mainColorr;
+                    
+
+                }
+                input{
+                    display:block;
+                    float: left;
+                    height: 30px;
+                    width: 200px;
+                    padding-left: 10px;
+                    margin-top: 5px;
+                    border-radius: 10px;
+                    border: 2px solid $mainColor;
+                    // color:$mainColorr;
+                }
+                i{
+                    display:block;
+                    float: right;
+                    color: $mainColorr;
+                    font-size: 24px;
+                    margin:5px 0 0 5px;
+                }
+            }
+        }
+    }
+    .home_body{
+        flex: 1;
+        overflow-y: auto;
+        // background-color: #ccc;
+        .home_banner{
+           img{
+               width: 100%;
+           }
+        }
+        .home_class{
+            width: 100%;
+            ul{
+                text-align: center;
+                // background-color: $mainColor;
+                overflow: hidden;
+                li{
+                    float: left;
+                    width: 25%;
+                    padding: 10px;
+                    img{
+                        width:100%;
+                    }
+                    p{
+                        margin-top: 5px;
+                        // color: $mainColorw;
+                    }
+                }
+            }
+        }
+        .home_select{
+            p{
+                line-height: 30px;
+                text-align: center;
+                font-size: 16px;
+                background-color: $mainColorr;
+                color: $mainColorw;
+            }
+            ul{
+                li{
+                    // height: 40px;
+                    padding: 5px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .home_goodsCategory{
+            width: 100%;
+            .category_one{
+                .category_img{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    width:100%;
+                    overflow: hidden;
+                    .left_img{
+                        float: left;
+                        width: 50%;
+                        padding: 5px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .right_img{
+                        width: 50%;
+                        float: right;
+                        li{
+                            padding: 5px;
+                            img{
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .category_two{
+                .category_img{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    .details_mainImg{
+                        padding: 5px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    ul{
+                        li{
+                            width: 50%;
+                            float: left;
+                            padding: 5px;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .category_three{
+                .category_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    ul{
+                        overflow: hidden;
+                        li{
+                            width: 50%;
+                            padding: 5px;
+                            float: left;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
