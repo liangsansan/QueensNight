@@ -26,13 +26,7 @@
 	import $ from 'jquery'
 
 	export default {
-		data: function(){
-			return {
-				username: '',
-				pwd: ''
-			}
-		},
-		methods: {
+
 			login: function(event){
 				if($('form').valid()){
 					this.$store.dispatch('login', {username: this.username, password: this.pwd})
@@ -40,6 +34,7 @@
 				// this.$store.state.login.data
 			}
 			// ...mapActions(['login'])
+
 		}
-	}
+	
 </script>

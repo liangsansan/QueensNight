@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
+import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
 import LoginComponent from '../components/login/login.vue'
 
@@ -12,18 +13,16 @@ const router = new VueRouter({
 		path: '/',
 		name: 'home',
 		component: HomeComponent,
-		// children: [{
-		
-		// }]
+		children: []
 	},{
 		path: '/login',
 		name: 'login',
-		component: LoginComponent,
-		// children: [{
-		
-		// }]
-	}
-	]
+		component: LoginComponent
+	},{
+		path:'/mine',
+		name:'mine',
+		component:MineComponent
+	}]
 })
 
 // 对将要进入的路由进行权判断

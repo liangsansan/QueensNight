@@ -1,0 +1,71 @@
+$mainColor:#f68bb7;
+$fontColor:#333;
+$font_size:75;
+@function rem($px){
+    @return ($px / $font_size) + rem;
+}
+// ip6下 html font-size:75px;
+
+#mine{
+    font-size: 14px;
+    a{color:$fontColor}
+    color:$fontColor;
+    header{
+        .hb-nav{
+            position: relative;
+            height:rem(51);
+            line-height:rem(51);
+            background-color:$mainColor;
+            text-align: center;
+            .btnl{
+                position: absolute;
+                top: 0;
+                width: rem(51);
+                height: 100%;
+            }
+            span{
+                display: inline-block;
+                font-size:rem(22);
+                color:#fff;
+            }
+        }
+        .hbmain-info{
+            background-color: #f8f8f8;
+            padding: rem(10);
+            p{
+                height: rem(32);
+                line-height: rem(32);
+            }
+            .hb-userName{
+                color:$mainColor;
+            }
+            .empirical{
+                color:$mainColor;
+            }
+            .menberLevel{
+                color:$mainColor;
+            }
+        }
+
+    }
+    article{
+        .menber-list{
+            padding-top: rem(15);
+            padding-bottom: rem(50);
+            line-height: rem(32);
+            background-color: white;
+            .list-top {
+                border-top: rem(1) solid #cccccc;
+            }
+            a{color: #333;}
+            li{
+                text-indent:1.5em;
+                font-size: rem(14);
+                height: rem(54);
+                line-height: rem(54);
+                vertical-align: middle;
+                border-bottom: rem(1) solid #cccccc;
+            }
+        }
+    }
+}
