@@ -1,10 +1,28 @@
 $mainColor:#f68bb7;
 $fontColor:#333;
 $font_size:75;
+
+
+@import '../../assets/iconfont/iconfont.css';
+@import '../../assets/common/H-ui.reset.css';
+
 @function rem($px){
     @return ($px / $font_size) + rem;
 }
 // ip6下 html font-size:75px;
+
+// for iphone5
+@media screen and (max-width:320px){
+    .ellipsis{
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        /* for internet explorer */ 
+        overflow:hidden; 
+        width:14em;
+            display:inline-block;
+    }
+};
+
 
 #mine{
     font-size: 14px;
@@ -18,10 +36,16 @@ $font_size:75;
             background-color:$mainColor;
             text-align: center;
             .btnl{
+                color:#fff;
+                width: rem(51);
+                height: rem(51);
+                line-height: rem(51);
                 position: absolute;
                 top: 0;
-                width: rem(51);
-                height: 100%;
+                z-index:10;
+                i.icon{
+                    font-size: 38px;    
+                }
             }
             span{
                 display: inline-block;
@@ -61,10 +85,13 @@ $font_size:75;
             li{
                 text-indent:1.5em;
                 font-size: rem(14);
-                height: rem(54);
                 line-height: rem(54);
                 vertical-align: middle;
                 border-bottom: rem(1) solid #cccccc;
+                i.iconfont{
+                    font-size:rem(22);
+                    margin-right: 1em;
+                }
             }
         }
     }

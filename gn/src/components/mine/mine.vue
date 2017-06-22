@@ -2,7 +2,9 @@
     <div id="mine" >
 		<header>
 			<div class="hb-nav">
-				<div class="btnl hbtn hisbtn"></div>
+				<div class="btnl">
+					<i class="icon iconfont icon-fanhui"></i>
+				</div>
 				<span >会员中心</span>
 			</div>
 			<div class="hbmain-info">
@@ -14,22 +16,22 @@
 					您目前是&nbsp;&nbsp;:&nbsp;&nbsp;
 					<span class="menberLevel">普通会员</span>
 				</p>
-				<p>
+				<p style="line-height:100%">
 					经验值是&nbsp;&nbsp;:&nbsp;&nbsp;
 					<span class="empirical">0</span>
-					<span>（经验值累计到1000可称为高级会员）</span>
+					<span class="ellipsis">（经验值累计到1000升级高级会员）</span>
 				</p>
 			</div>
 			
 		</header>
 		<article>
 			<ul class="menber-list">
-				<li class="list-top"><span class="list">我的订单</span><span class="have-look">查看全部订单</span></li>
-				<li><span>我的钱包</span></li>
-				<li><span>我的关注</span></li>
-				<li><span>咨询评价</span></li>
-				<li><span>地址管理</span></li>
-				<li><span>修改密码</span></li>
+				<li class="list-top"><span class="list">我的订单</span><i class="icon iconfont flr icon-youjiantou-"></i><span class="flr have-look">查看全部订单</span></li>
+				<li><span>我的钱包</span><i class="icon iconfont flr icon-youjiantou-"></i></li>
+				<li><span>我的关注</span><i class="icon iconfont flr icon-youjiantou-"></i></li>
+				<li><span>咨询评价</span><i class="icon iconfont flr icon-youjiantou-"></i></li>
+				<li><span>地址管理</span><i class="icon iconfont flr icon-youjiantou-"></i></li>
+				<li><span>修改密码</span><i class="icon iconfont flr icon-youjiantou-"></i></li>
 			</ul>
 		</article>
     </div>
