@@ -28,17 +28,11 @@
 	export default {
 		data: function(){
 			return {
-				username: '',
-				pwd: ''
+				 
 			}
 		},
 		methods: {
-			login: function(event){
-				if($('form').valid()){
-					this.$store.dispatch('login', {username: this.username, password: this.pwd})
-				}
-			}
-			// ...mapActions(['login'])
+			
 		}
 	}
 </script>
