@@ -36,6 +36,6 @@
     flex: 1;
   }
   #foot{
-    height: 40px;
+    height: 65px;
   }
 </style>

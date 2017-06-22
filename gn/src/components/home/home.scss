@@ -1,3 +1,19 @@
-h1{
-    font-size: 14px;
+.home_page{
+    display: flex;
+    width: 100%;
+    .home_top{
+        // height: 80px; 
+            width: 100%;
+        .home_logo{
+            height: .46875rem;
+            width: 100%;
+            background-image: url('../../assets/ly-use/logo.png');
+            background-size: cover;
+        }
+        .home_body{
+            height: 20px;
+            width: 100px;
+            background-color: #ff0080;
+        }
+    }
 }

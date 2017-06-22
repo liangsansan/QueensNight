@@ -16,7 +16,7 @@
 	Explain:		重定义浏览器默认样式
 	Last Modify:	jackying
 */
-html,body{height: 100%;}
+html,body{height: 100%;box-sizing: border-box;}
 *{word-wrap:break-word}
 html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,fieldset{margin:0;padding:0}
 ul,ol,dl{list-style-type:none}
@@ -26,7 +26,6 @@ address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
 input,button{overflow: visible;vertical-align:middle;outline:none}
 body,th,td,button,input,select,textarea{font-size:12px;color: #333;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale}
-body{line-height:1.6}
 h1,h2,h3,h4,h5,h6{font-size:16px}
 a,area{outline:none;}
 a{text-decoration:none;cursor: pointer}

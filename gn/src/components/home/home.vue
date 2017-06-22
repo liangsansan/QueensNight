@@ -1,6 +1,11 @@
 <template>
-	<div>
-		<h2>home</h2>
+	<div class="home_page">
+		<div class="home_top">
+			<div class="home_logo"></div>
+		</div>
+		<div class="home_body">
+
+		</div>
 	</div>
 </template>
 
