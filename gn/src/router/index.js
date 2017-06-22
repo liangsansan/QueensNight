@@ -5,10 +5,13 @@ import http from '../utils/HttpClient'
 import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
 import LoginComponent from '../components/login/login.vue'
+import RegisterComponent from '../components/register/register.vue'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+	hashbang: true,
+  	history: true,
 	routes: [{
 		path: '/',
 		name: 'home',
@@ -18,6 +21,10 @@ const router = new VueRouter({
 		path: '/login',
 		name: 'login',
 		component: LoginComponent
+	},{
+		path:'/register',
+		name:'register',
+		component:RegisterComponent
 	},{
 		path:'/mine',
 		name:'mine',
