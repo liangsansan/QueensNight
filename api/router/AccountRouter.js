@@ -12,7 +12,7 @@ exports.Register = function(app){
         } else if(!request.body || !request.body.password){
             response.send(ApiResult(false, '密码不能为空！'));
         } else {
-            DB.get('account', {username: request.body.username}, function(result){
+            DB.get('userData', {username: request.body.username}, function(result){
                 if(!result.status){
                     response.send(result);
                 } else {
@@ -39,7 +39,7 @@ exports.Register = function(app){
             response.send(ApiResult(false, '昵称不能为空！'));
         } else {
             delete request.body.repassword;
-            DB.get('account', {username: request.body.username}, function(result){
+            DB.get('userData', {username: request.body.username}, function(result){
                 if(!result.status){
                     response.send(result);
                 } else {
@@ -58,7 +58,7 @@ exports.Register = function(app){
     // id查询获取商品
 	app.post('/getProdut', urlencodedParser, function(request, response){
 		response.setHeader("Access-Control-Allow-Origin","*");
-		DB.getProdut('shows', request.body, 'id', function(data){
+		DB.getProdut('products', request.body, 'id', function(data){
 			if(data){
 				response.send(ApiResult(true,'查找成功',data))
 			} else {
