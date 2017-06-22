@@ -2,6 +2,7 @@ $mainColor:#f68bb7;
 $fontColor:#333;
 $iconColor:#c9cabb;
 
+
 $font_size:75;
 
 // ip6下 html font-size:75px;
@@ -11,7 +12,7 @@ $font_size:75;
 @import '../../assets/common/H-ui.reset.css';
 @import '../../assets/bootstrap/css/bootstrap.min.css';
 
-#login{
+#register{
     font-size: 14px;
     .hb-nav{
         position: relative;
@@ -46,22 +47,22 @@ $font_size:75;
                 margin: rem(15) 0;
             }
             .input-group-addon{
-                width: rem(76);
+                width: rem(85);
             }
             input{
                 height: rem(34);
                 line-height: rem(34);
                 text-indent: 2em;
             }
-            button{
-                width: 40%;
-            }
-            .btn{height: rem(35);}
-            .btn-success{
-                margin-right: rem(10);
+            .btn{
+                height: rem(50);
+                line-height: rem(50);
             }
             p.rem_id{
+                height: 48px;
+                line-height: 48px;
                 line-height: rem(42.5);
+                a{color:$mainColor;}
             }
         }
     }
@@ -81,6 +82,7 @@ $font_size:75;
                 height: rem(65);
                 line-height: rem(65);
                 i.icon{font-size:45px;color:$iconColor;}
+
                 // background-color: #d9534f;
             }
         }

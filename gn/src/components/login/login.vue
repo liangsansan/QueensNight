@@ -2,7 +2,7 @@
 	<div id="login" >
 		<header>
 			<div class="hb-nav">
-				<div class="btnl">
+				<div class="btnl" @click="goback">
 					<i class="icon iconfont icon-fanhui"></i>
 				</div>
 				<span >登录</span>
@@ -13,11 +13,11 @@
 				<form action="">
 					<div class="input-group">
 						<span class="input-group-addon">用户名:</span>
-						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						<input type="text" class="form-control" placeholder="Username" v-model='username' aria-describedby="basic-addon1" >
 					</div>
 					<div class="input-group">
 						<span class="input-group-addon">密码 : </span>
-						<input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
+						<input type="password" class="form-control" placeholder="password" v-model='password' aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group">
 						<span class="input-group-addon">验证码 : </span>
@@ -30,27 +30,20 @@
 						</label>
 						<a href="#" class="flr">忘记密码</a>
 					</p>
-					<button type="button" class="btn btn-default">注册</button>
-					<button type="button" class="btn btn-primary btn-success flr">登录</button>
-
+					<button type="button" class="btn btn-default" @click='goReg'>注册</button>
+					<button type="button" class="btn btn-primary btn-success flr" @click='hblogin'>登录</button>
 				</form>
 				<div class="cooperate-login">
 					<h3>选择其他方式登录</h3>
 						<ul class="cooper-link">
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-qq"></i>
-								</a>
+								<i class="icon iconfont icon-qq" @click='alertInfo'></i>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-xinlangweibo"></i>
-								</a>
+								<i class="icon iconfont icon-xinlangweibo" @click='alertInfo'></i>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-weixin"></i>
-								</a>
+								<i class="icon iconfont icon-weixin" @click='alertInfo'></i>
 							</li>
 						</ul>
 				</div>
@@ -63,11 +56,40 @@
 	import './Login.scss'
 	import { mapGetters, mapActions } from 'vuex'
 	import $ from 'jquery'
+	import router from '../../router/index.js'
 
 	export default {
-
-			login: function(event){
+		data:function(){
+			return {
+				username:'',
+				password:''
+			}
+		},
+		methods:{		
+			alertInfo(){
+				$.alert('还在施工中')
+			},
+			goback(){
+				router.go(-1)
+			},
+			goReg(){
+				router.push('register')
+			},
+			hblogin(){
+				let[a,b]=[this.username,this.password];
+				let info={username:a,password:b};
+				console.log(this.username,this.password);
+				$.post('http://localhost:888/' +  'login', info, function(response){
+					if(response.status ==false){
+						$.alert(response.message)
+					}else if(response.status ==true){
+						localStorage.userName = a;
+						$.alert('登录成功');
+						router.push('mine');
+					}
+				})
 			}
 		}
+	}
 	
 </script>
