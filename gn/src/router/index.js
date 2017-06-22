@@ -4,8 +4,8 @@ import http from '../utils/HttpClient'
 
 import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
-import LoginComponent from '../components/login/login.vue'
-
+import Details from '../components/dzy_details/dzy_details.vue'
+import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -22,7 +22,17 @@ const router = new VueRouter({
 		path:'/mine',
 		name:'mine',
 		component:MineComponent
+	},{
+		path:'/details',
+		name:'details',
+		component:Details,
+		children:[{
+			path:'/wenxiong',
+			name:'wenxiong',
+			component:Wenxiong
+		}]
 	}]
+
 })
 
 // 对将要进入的路由进行权判断
