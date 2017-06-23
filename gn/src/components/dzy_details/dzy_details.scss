@@ -64,8 +64,10 @@
     .details_main{
         flex:1;
         background:#fff;
-        
+        display:flex;
+        flex-direction: column;
         .details_main_top{
+            height:0.625rem;
             .details_tab{
                 height:0.625rem;
                 background:#f2f2f2;
@@ -89,12 +91,17 @@
                             
                     }
                     .d_t_text_active{
-                        background:#ff9999;
+                        background:#FF9993;
                         color:#fff;
                     }
                 }
             } 
 
+        }
+        .details_main_main{
+            flex:1;
+            overflow-y: scroll;
+            background:#FF9993;
         }
     }
 }

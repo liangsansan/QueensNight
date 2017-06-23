@@ -8,7 +8,6 @@
 			<li><router-link :to="{name:'home'}"><i class="iconfont icon-gerenzhongxin"></i><span>用户中心</span></router-link></li>
 		</ul>
 	</div>
-
 </template>
 
 

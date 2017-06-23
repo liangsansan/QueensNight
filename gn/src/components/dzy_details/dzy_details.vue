@@ -16,16 +16,17 @@
             <div class="details_main_top">
                 <div class="details_tab swiper-container">
                     <div class="d_t_div swiper-wrapper">
-                        <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text d_t_text_active">文胸</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text">毛衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text">泳衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text">内裤</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text">丝袜</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text">折扣</router-link></div> 
+                        <!--router-link会阻止click事件-->
+                        <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text d_t_text_active" @click.native="checkColor">文胸</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">毛衣</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">泳衣</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">内裤</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">丝袜</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">折扣</router-link></div> 
                     </div>
                 </div>
             </div>
-            <div class="details_main">
+            <div class="details_main_main">
                 <router-view></router-view>
             </div>
         </div>
@@ -37,7 +38,7 @@
     import  './dzy_details.scss'
   import './../../assets/swiper/swiper-3.4.2.min.css'
   import Swiper from './../../assets/swiper/swiper-3.4.2.min.js'
-
+import $ from 'jquery'
 
 	export default {
 		components: {
@@ -50,7 +51,6 @@
                 //要不要居中显示
                 centeredSlides: false,
                 paginationClickable: true,
-               
                 grabCursor: true
             }) 
         },
@@ -59,8 +59,19 @@
 				
 			}
 		},
+        beforeUpdate(){
+            // console.log(1);
+        },
 		methods: {
-
+            checkColor:function(e){
+                $('.d_t_text').map(function(i){
+                    
+                    this.classList.remove('d_t_text_active');
+                })
+                e.target.classList.add('d_t_text_active');
+                
+            },
+            
 		},
 		created(){
 
