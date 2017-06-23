@@ -1,5 +1,6 @@
 $mainColor:#f68bb7;
 $fontColor:#333;
+$iconColor:#c9cabb;
 
 $font_size:75;
 
@@ -79,7 +80,7 @@ $font_size:75;
                 width: rem(98);
                 height: rem(65);
                 line-height: rem(65);
-                i.icon{font-size:45px;}
+                i.icon{font-size:45px;color:$iconColor;}
                 // background-color: #d9534f;
             }
         }

@@ -37,19 +37,13 @@
 					<h3>选择其他方式登录</h3>
 						<ul class="cooper-link">
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-qq"></i>
-								</a>
+								<i class="icon iconfont icon-qq" @click='alertInfo'></i>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-xinlangweibo"></i>
-								</a>
+								<i class="icon iconfont icon-xinlangweibo" @click='alertInfo'></i>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon iconfont icon-weixin"></i>
-								</a>
+								<i class="icon iconfont icon-weixin" @click='alertInfo'></i>
 							</li>
 						</ul>
 				</div>
@@ -71,7 +65,10 @@
 				password:''
 			}
 		},
-		methods:{																						
+		methods:{		
+			alertInfo(){
+				$.alert('还在施工中')
+			},
 			goback(){
 				router.go(-1)
 			},
