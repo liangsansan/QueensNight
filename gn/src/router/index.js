@@ -4,7 +4,6 @@ import http from '../utils/HttpClient'
 
 import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
-import LoginComponent from '../components/login/login.vue'
 
 Vue.use(VueRouter)
 
