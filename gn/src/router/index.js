@@ -7,6 +7,7 @@ import HomeComponent from '../components/home/home.vue'
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
 
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -16,7 +17,7 @@ const router = new VueRouter({
 		path: '/',
 		name: 'home',
 		component: HomeComponent,
-		children: []
+	
 	},{
 		path: '/login',
 		name: 'login',
@@ -29,6 +30,7 @@ const router = new VueRouter({
 		path:'/mine',
 		name:'mine',
 		component:MineComponent
+
 	}]
 })
 
