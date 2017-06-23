@@ -1,8 +1,6 @@
 $mainColor:#f68bb7;
 $fontColor:#333;
 $iconColor:#c9cabb;
-
-
 $font_size:75;
 
 // ip6下 html font-size:75px;
@@ -13,7 +11,7 @@ $font_size:75;
 @import '../../assets/bootstrap/css/bootstrap.min.css';
 
 #register{
-    font-size: 14px;
+    font-size: rem(14);
     .hb-nav{
         position: relative;
         height:rem(51);
@@ -29,7 +27,7 @@ $font_size:75;
             top: 0;
             z-index:10;
             i.icon{
-                font-size: 38px;    
+                font-size: rem(38);    
             }
         }
         span{
@@ -59,8 +57,8 @@ $font_size:75;
                 line-height: rem(50);
             }
             p.rem_id{
-                height: 48px;
-                line-height: 48px;
+                height: rem(48);
+                line-height: rem(48);
                 line-height: rem(42.5);
                 a{color:$mainColor;}
             }
@@ -81,8 +79,7 @@ $font_size:75;
                 width: rem(98);
                 height: rem(65);
                 line-height: rem(65);
-                i.icon{font-size:45px;color:$iconColor;}
-
+                i.icon{font-size:rem(45);color:$iconColor;}
                 // background-color: #d9534f;
             }
         }
