@@ -1,0 +1,88 @@
+$mainColor:#f68bb7;
+$fontColor:#333;
+$iconColor:#c9cabb;
+
+$font_size:75;
+
+// ip6下 html font-size:75px;
+@function rem($px){
+    @return ($px / $font_size) + rem;
+}
+@import '../../assets/common/H-ui.reset.css';
+@import '../../assets/bootstrap/css/bootstrap.min.css';
+
+#login{
+    font-size: 14px;
+    .hb-nav{
+        position: relative;
+        height:rem(51);
+        line-height:rem(51);
+        background-color:$mainColor;
+        text-align: center;
+        .btnl{
+            color:#fff;
+            width: rem(51);
+            height: rem(51);
+            line-height: rem(51);
+            position: absolute;
+            top: 0;
+            z-index:10;
+            i.icon{
+                font-size: 38px;    
+            }
+        }
+        span{
+            display: inline-block;
+            font-size:rem(22);
+            color:#fff;
+        }
+    }
+    .hbmain-content{
+        form{
+            padding: rem(10);
+            .input-group{width: 100%;}
+            .rem_id{font-size: rem(11);font-weight: normal}
+            .input-group{
+                margin: rem(15) 0;
+            }
+            .input-group-addon{
+                width: rem(76);
+            }
+            input{
+                height: rem(34);
+                line-height: rem(34);
+                text-indent: 2em;
+            }
+            button{
+                width: 40%;
+            }
+            .btn{height: rem(35);}
+            .btn-success{
+                margin-right: rem(10);
+            }
+            p.rem_id{
+                line-height: rem(42.5);
+            }
+        }
+    }
+    .cooperate-login{
+        h3{
+            text-align: center;
+            height: rem(39);
+            line-height: rem(39);
+            font-size: rem(14);
+        }
+        ul.cooper-link{
+            display: flex;
+            justify-content:space-around;
+            li{
+                text-align:center;
+                width: rem(98);
+                height: rem(65);
+                line-height: rem(65);
+                i.icon{font-size:45px;color:$iconColor;}
+                // background-color: #d9534f;
+            }
+        }
+    }
+}
