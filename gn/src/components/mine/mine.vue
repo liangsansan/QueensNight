@@ -63,7 +63,6 @@
 			},
 			myWallet(){
 				router.push('myWallet')
-				$.alert('我的钱包')
 			},
 			myStar(){
 				$.alert('我的关注')

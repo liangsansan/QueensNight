@@ -37,4 +37,71 @@ $font_size:75;
             color:#fff;
         }
     };
+    .hbmain-content{
+        background-color: #f6f6f6;
+        min-height: 540px;
+        padding-top: rem(18);
+        ul.wallet-nav{
+            display: flex;
+            width: 90%;
+            margin: 0 auto ;
+            li{
+                width: 33%;
+                border-right: 1px solid e9e9e9;
+                background-color: #fff;
+                margin-right: rem(-1);
+                border-right: rem(1) solid #e9e9e9;
+                height: rem(24);
+                line-height: rem(24);
+                vertical-align: middle;
+                text-align: center;
+                font-size: rem(14);
+                color: #757575;
+                text-align: center;
+            }
+            li.active{
+                background-color: #f68bb7;
+                color: white;
+            }
+        }
+        .inte{
+            width: 90%;
+            margin: rem(10) auto;
+            height: rem(26);
+            line-height: rem(26);
+            vertical-align: middle;
+            text-align: center;
+            border: rem(1) solid #e9e9e9;
+            background-color: #ffffff;
+            font-size: rem(14);
+            span{color:$mainColor}
+        }
+        .pocket-money{
+            padding: 10px;
+            height: 100%;
+            text-align: left;
+            h4{
+                border-bottom: 1px dotted #efefef;
+                padding-bottom: 5px;
+                text-indent: 1em;
+                height: 20px;
+                line-height: 20px;
+                font-size: 12px;
+            }
+            .content{text-indent: 2em}
+        }
+        .poket-ticket{
+            @extend .pocket-money;
+        }
+        .pocket-action{height: 5em;line-height: 5em;}
+        .pocket-rules{
+            padding: rem(10) 0;
+            padding-left: rem(5);
+            font-size: rem(16);
+            line-height: rem(18);
+            text-align: left;
+            color: #aeaeae; 
+            height: 100%;
+        }
+    }
 }

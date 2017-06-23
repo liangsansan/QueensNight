@@ -34,7 +34,7 @@ const router = new VueRouter({
 		component:MineComponent,
 		children:[]
 	},{
-		path:'myWallet',
+		path:'/myWallet',
 		name:'myWallet',
 		component:WalletComponent
 	}]
