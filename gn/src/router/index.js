@@ -2,13 +2,23 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
-import MineComponent from '../components/mine/mine.vue'
 import HomeComponent from '../components/home/home.vue'
 import Details from '../components/dzy_details/dzy_details.vue'
 import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
+
+// 登录注册
+import LoginComponent from '../components/login/login.vue'
+import RegisterComponent from '../components/register/register.vue'
+//我的..
+import MineComponent from '../components/mine/mine.vue'
+import WalletComponent from '../components/myWallet/myWallet.vue'
+
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+	hashbang: true,
+  	history: true,
 	routes: [{
 		path: '/',
 		name: 'home',
@@ -19,9 +29,14 @@ const router = new VueRouter({
 		name: 'login',
 		// component: LoginComponent
 	},{
+		path:'/register',
+		name:'register',
+		component:RegisterComponent
+	},{
 		path:'/mine',
 		name:'mine',
-		component:MineComponent
+		component:MineComponent,
+		children:[]
 	},{
 		path:'/details',
 		name:'details',
@@ -31,6 +46,10 @@ const router = new VueRouter({
 			name:'wenxiong',
 			component:Wenxiong
 		}]
+	},{
+		path:'myWallet',
+		name:'myWallet',
+		component:WalletComponent
 	}]
 })
 
