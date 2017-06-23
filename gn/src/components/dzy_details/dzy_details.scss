@@ -1,0 +1,108 @@
+.details_container{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    overflow-y:scroll;
+    .details_top{
+        width:100%;
+        height:0.625rem;
+        background:#ff9999;
+        
+        .details_search{
+            display:flex;
+            height:100%;
+            justify-content:center;
+            padding:0 3%;
+            align-items:center;
+            .icon-fanhui,.icon-xiao46{
+                font-size:0.4375rem;
+                color:#fff;
+            }
+            .d_s_i_box{
+                flex:1;
+                display: inline-block;
+                vertical-align:super;
+                padding:2%;
+                height:100%;
+                text-align:center;
+                .d_s_i_b1{
+                    height:100%;
+                    width:100%;
+                    background: #fff;
+                    display:inline-block;
+                    display:flex;
+                   align-items:center;
+                   padding:2%;
+                    .d_s_input{
+                        border:0;
+                        width:90%;
+                        height:100%;
+                        
+                    }
+                    
+                }
+                .icon-sousuo-sousuo{
+                        color:#000;
+                        flex:1;
+                        background:#fff;
+                        
+                        font-size:0.2375rem;
+                        
+                        
+                        
+                        :before{
+                            line-height:100%;
+                        }
+                    }
+                
+            }
+            
+        } 
+        
+    
+    }
+    .details_main{
+        flex:1;
+        background:#fff;
+        display:flex;
+        flex-direction: column;
+        .details_main_top{
+            height:0.625rem;
+            .details_tab{
+                height:0.625rem;
+                background:#f2f2f2;
+                .d_t_div{
+                    width:100%;
+                    height:100%;
+                    
+                    a{
+                        width:100%;
+                        height:100%;
+                        color:#000;
+                        display:inline-block;
+                        text-decoration: none;
+                        
+                        
+                    }
+                    .d_t_text{
+                            background:#f2f2f2;
+                            text-align:center;
+                            line-height:0.625rem;
+                            
+                    }
+                    .d_t_text_active{
+                        background:#FF9993;
+                        color:#fff;
+                    }
+                }
+            } 
+
+        }
+        .details_main_main{
+            flex:1;
+            overflow-y: scroll;
+            background:#FF9993;
+        }
+    }
+}
+  

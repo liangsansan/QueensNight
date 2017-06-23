@@ -14,6 +14,7 @@
 <script>
   import spinner from './components/spinner/spinner.vue'
   import foot from './components/footer/footer.vue'
+
   export default {
     components: {
       spinner,
@@ -30,6 +31,7 @@
       opacity: 0
     }
   #app {
+    
     position: relative;
     width: 100%;
     height: 100%;
