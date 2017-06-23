@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="main">
-      <router-view></router-view>
+      <transition name="fade"><router-view></router-view></transition> 
     </div>
     <div id="foot">
       <foot></foot>
@@ -24,6 +24,12 @@
 </script>
 
 <style lang="scss">
+    .fade-enter-active,.fade-leave-active{
+      transition: opacity .5s
+    }
+    .fade-enter,.fade-leave{
+      opacity: 0
+    }
   #app {
     
     position: relative;
@@ -36,7 +42,7 @@
   }
   #main{
     flex: 1;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   #foot{
     height: 65px;

@@ -32,7 +32,6 @@ const router = new VueRouter({
 			component:Wenxiong
 		}]
 	}]
-
 })
 
 // 对将要进入的路由进行权判断
