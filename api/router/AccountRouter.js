@@ -52,16 +52,23 @@ exports.Register = function(app){
             })
         }        
     });
-    // id查询获取商品
-	app.post('/getProdut', urlencodedParser, function(request, response){
-		response.setHeader("Access-Control-Allow-Origin","*");
-		DB.getProdut('products', request.body, 'id', function(data){
-			if(data){
-				response.send(ApiResult(true,'查找成功',data))
-			} else {
-				response.send(ApiResult(false, '商品ID错误'));
-			}
-		})
-	});
-
+    //查找所有商品
+    app.post('/getProduct',urlencodedParser,function(request,response){
+        response.setHeader("Access-Control-Allow-Origin","*");
+        DB.get('products',{},function(result){
+                console.log(result,"result")
+            response.send(result)
+            
+        })
+    });
+    app.post('/addProducts', urlencodedParser, function(request, response){
+        response.setHeader("Access-Control-Allow-Origin","*");
+        DB.addProducts('products', request.body, 'qnTitle', function(data){
+            if(data){
+                response.send(apiResult(true,'提交成功'))
+            }else{
+                response.send(apiResult(false, 'qnTitle重复，提交失败'))
+            }
+        })
+    });
 }
