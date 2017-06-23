@@ -1,0 +1,240 @@
+<template>
+    <div class="contianer">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>operation</th>
+                    <th>id</th>
+                    <th>Title</th>
+                    <th>PrimaryPrices</th>
+                    <th>DiscountPrices</th>
+                    <th>Classify</th>
+                    <th>HomeClass</th>
+                    <th>Amount</th>
+                    <th>Img1</th>
+                    <th>Img2</th>
+                    <th>Img3</th>
+                    <th>Img4</th>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <th>DetailsImg1</th>
+                    <th>DetailsImg2</th>
+                    <th>DetailsImg3</th>
+                    <th>DetailsImg4</th>
+                    <th>DetailsText</th>
+                    <th>qnBrand</th>
+                    <th>qnType</th>
+                    <th>qnNum</th>
+                    <th>qnCup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <router-link to="/admin/remove"><span><i class="glyphicon glyphicon-pencil"></i></span></router-link>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span router><i class="glyphicon glyphicon-pencil"></i></span>
+                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                    </td>
+                    <td>id</td>
+                    <td>名称</td>
+                    <td>原价</td>
+                    <td>折扣</td>
+                    <td>商品分类</td>
+                    <td>首页分类</td>
+                    <td>售量</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>红色</td>
+                    <td>75B</td>
+                    <td>2.jpg"</td>
+                    <td>"2.jpg"</td>
+                    <td>"3.jpg"</td>
+                    <td>"4.jpg"</td>
+                    <td>QueensNight</td>
+                    <td>升杯聚拢系列</td>
+                    <td>65156156</td>
+                    <td>带蕾丝</td>
+                    <td>日常/职场，婚礼，运动，派对/夜店/约会</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<script type="text/javascript" src="">
+    import './list.scss';
+    export default {
+        
+    }
+</script>

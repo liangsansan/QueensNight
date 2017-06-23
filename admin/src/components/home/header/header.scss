@@ -1,0 +1,75 @@
+@import '../../../assets/common/global.scss';
+
+.rs-header{
+	width: 100%; 
+	height: 100px; 
+	line-height: 100px;
+	background: #ff9999;
+	/*logo*/
+	>ul:first-child{
+		height: 100%;
+    	text-align: right;
+		float: left;
+		li{
+			width: 100%;
+			height: 100%;
+			padding: 4px 15px;
+			font-family: 'Raleway', sans-serif;
+			font-size: 25px;
+			.router-link-active{
+				// color: #000;
+				font-family: 'Microsoft YaHei',"Comic Sans MS","幼圆","黑体",sans-serif;
+			}
+			img{
+				margin-top: -10px;
+			}
+		}
+	}
+	/*right*/
+	>ul:last-child{
+		height: 48px;
+		float: right;
+		padding-right: 20px;
+		margin-top: 36px;
+		li{
+			height: 48px;
+			height: 48px;
+			position: relative;
+			text-align: center;
+			padding: 15px;
+			float: left;
+			a{
+				display: block;
+				color: #666666;
+				position: relative;
+				height: 21px;
+				width: 21px;
+				i{
+					font-size: 18px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					span{
+						position: absolute; 
+						bottom: 10px; 
+						left: 10px; 
+						font-size: 10px; 
+						padding: 2px 5px;
+					}
+				}
+				span{
+					position: absolute;
+					top: -10px;
+					left: 10px;
+				}
+			}
+		}
+		li:last-child{
+			width: 120px;
+			padding: 15px;
+			a{
+				line-height: 20px;
+			}
+		}
+	}
+}
