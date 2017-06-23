@@ -6,7 +6,6 @@ import HomeComponent from '../components/home/home.vue'
 // 登录注册
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
-
 //我的..
 import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
