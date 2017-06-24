@@ -81,7 +81,29 @@ module.exports = {
     },
 
      //关键字搜索
-    getProductsBykeyword:function(){
-        
+    getProductsBykeyword:function(_collection, data, key, callback){
+          db.open(function(error, db){
+            if(error){
+                console.log('connect db:', error);
+		    }
+            //_collection=>cake => 集合名（表名）
+            console.log('data',data)
+            db.collection(_collection, function(error, collection){
+                if(error){
+                    console.log(error)	
+                } else {
+                    var obj = {};
+                    obj[key] = data[key];
+                    collection.find(obj).toArray(function(err, docs){
+                        if (docs.length>=1) {
+                            callback(docs);
+                        }else{
+                            callback();
+                        }
+                    })
+                }
+                db.close();
+            })
+        })	
     }
 }
