@@ -23,8 +23,7 @@ const router = new VueRouter({
 		name: 'home',
 		component: HomeComponent,
 		children: []
-	},
-	{
+	},{
 		path: '/car',
 		name: 'car',
 		component: CarComponent
@@ -50,14 +49,12 @@ const router = new VueRouter({
 		path:'/address',
 		name:'address',
 		component:AddAdComponent,
-		children:[
-			{
+		children:[{
 				path:'/address/add',
 				name:'add',
 				component:AddComponent
-			}
-		]
-	}
+			}]
+	}]
 })
 
 // 对将要进入的路由进行权判断
