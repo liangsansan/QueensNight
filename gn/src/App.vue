@@ -32,7 +32,7 @@
     },
     methods:{
         getTopShow(isshow){
-          // console.log(this.$children[1], this.$refs.foot)
+          // console.log(this.$children)
          this.$refs.foot.getTopShow(isshow)
         }
     // console.log(this)
@@ -62,6 +62,6 @@
     overflow-y: auto;
   }
   #foot{
-    height: 65px;
+    height: 55px;
   }
 </style>

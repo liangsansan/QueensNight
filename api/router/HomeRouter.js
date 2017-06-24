@@ -10,7 +10,7 @@ exports.Handle=function(app){
 			if(data){
 				response.send(ApiResult(true,'查找成功',data))
 			} else {
-				response.send(ApiResult(false, '未找到任何商品'));
+				response.send(ApiResult(false, '未找到商品'));
 			}
 		})
     })
