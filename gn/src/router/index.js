@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
-import HomeComponent from '../components/home/home.vue'
 import CarComponent from '../components/car/car.vue'
 
 Vue.use(VueRouter)
@@ -11,12 +10,6 @@ const router = new VueRouter({
 	hashbang: true,
   	history: true,
 	routes: [{
-		path: '/',
-		name: 'home',
-		component: HomeComponent,
-		children: []
-	},
-	{
 		path: '/car',
 		name: 'car',
 		component: CarComponent
