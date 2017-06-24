@@ -20,12 +20,23 @@ const mutations = {
 	// 		})
 	// 	}
 	// }
+
+	// 
+	search:(data,formData)=>{
+			http.get('search', formData)
+			.then(response => {
+				this.state.data=response;
+				router.push({name: 'list',params:{formData}})
+			})
+
+	}
+
 }
 
 const actions = {
-	// login: (events, formData) => {
-	// 	events.commit('login', formData)
-	// }
+	search: (events, formData) => {
+		events.commit('search', formData)
+	}
 }
 
 export default {

@@ -59,6 +59,9 @@
 	import router from '../../router/index.js'
 
 	export default {
+		components:{
+
+		},
 		data:function(){
 			return {
 				username:'',

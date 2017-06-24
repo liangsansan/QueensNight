@@ -19,7 +19,7 @@ function getUrl(path) {
 
 const errorHandler = (err) => {
     if(err.response && err.response.status == 401 && JSON.parse(err.response.text).msg == 'unauthorized'){
-        router.push({name: 'login'})
+        // router.push({name: 'login'})
         return false;
     }
     var str = err.response.status

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div id="main">
-      <transition name="fade"><router-view></router-view></transition> 
+      <transition name="fade"><router-view :toTopShow="topShow"></router-view></transition> 
     </div>
     <div id="foot">
-      <foot></foot>
+      <foot ref="foot"></foot>
     </div>
     
     <spinner v-show="false"></spinner>
@@ -19,6 +19,23 @@
     components: {
       spinner,
       foot
+    },
+    created(){
+      
+    },
+    data(){
+      return {
+        scroll:'',
+        show:'',
+        topShow:null
+      }
+    },
+    methods:{
+        getTopShow(isshow){
+          // console.log(this.$children[1], this.$refs.foot)
+         this.$refs.foot.getTopShow(isshow)
+        }
+    // console.log(this)
     }
   }
 </script>

@@ -8,14 +8,17 @@
 				<label for=""><span>搜全场</span><input type="text" placeholder="输入宝贝关键词" @keyup.enter="search"><i class="iconfont icon-sousuo-sousuo" @click="search" ></i></label>
 			</div>
 		</div>
-		<div class="home_body">
+		<div class="home_body  scroll_container " @scroll="Scroll" >
 			<div class="home_banner">
 				<!--swiper-->
 				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img src="../../assets/ly-use/select4.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="../../assets/ly-use/select1.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="../../assets/ly-use/select5.jpg" alt=""></div>
+					<!--<li v-for='img in imgList'>
+						<img v-lazy='lyimgurl+img'>
+					</li>-->
+					<div class="swiper-wrapper" >
+						<div class="swiper-slide" v-for='img in bannerImg'>
+							<img :src='imgUrl+img'>
+						</div>
 					</div>
 					<!-- 如果需要分页器 -->
 					<div class="swiper-pagination"></div>
@@ -40,14 +43,9 @@
 			<div class="home_select">
 				<p>热销商品与个性选择</p>
 				<ul>
-					<li><img src="../../assets/ly-use/select1.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select2.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select3.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select4.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select5.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select6.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select7.jpg" alt=""></li>
-					<li><img src="../../assets/ly-use/select8.jpg" alt=""></li>
+					<li v-for='img in imgList'>
+						<img v-lazy='imgUrl+img'>
+					</li>
 				</ul>
 			</div>
 			<div class="home_goodsCategory">
@@ -96,14 +94,46 @@
 	import './home.scss'
 	import './home.js'
 	import $ from 'jquery'
+	// 图片懒加载
+	import Vue from 'vue'
+	import VueLazyload from 'vue-lazyload'
+	// 引进全局地址
+	import base from '../../../global.js'
+
+	Vue.use(VueLazyload, {
+		error: base.lyimgUrl+'error.jpg',
+		loading: base.lyimgUrl+'loading.gif',
+		try: 3 // default 1
+	})
 
 	export default {
+		name:'home',
 		components: {
 			
 		},
 		data(){
 			return {
-				toolList: null
+				scroll:'',
+				toTopShow:'',
+				imgUrl:base.lyimgUrl,
+				bannerImg:[
+					"select1.jpg",
+					"select2.jpg",
+					"select3.jpg",
+				],
+				sortImg:[
+					
+				],
+				imgList:[
+					"select1.jpg",
+					"select2.jpg",
+					"select3.jpg",
+					"select4.jpg",
+					"select5.jpg",
+					"select6.jpg",
+					"select7.jpg",
+					"select8.jpg",
+				]
 			}
 		},
 		methods: {
@@ -111,10 +141,27 @@
 			search(){
 				let keyword=$('.home_search').find('input').val();
 				// console.log(keyword)
-
+				if(!keyword){
+					$.alert('请输入你想要找的宝贝！')
+				}
 				// 发送Ajax请求
-				// $.get('')
-			}
+				this.$store.dispatch('search', {keyword:keyword})
+			},
+			// 滚动事件
+			 Scroll() {
+		        this.scroll = $('.scroll_container').scrollTop()
+		       	if(this.scroll>400){
+		       		 this.toTopShow=true;
+						// console.log(this.$parent)
+					this.$parent.getTopShow(this.toTopShow)
+		       	}
+		       	 if(this.scroll<400){
+		       		this.toTopShow=false;
+					this.$parent.getTopShow(this.toTopShow)
+		       	}
+		       	// console.log(this.$parent)
+	      	},
+	  
 		},
 		created(){
 				// getGoods(){

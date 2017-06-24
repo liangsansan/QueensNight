@@ -3,6 +3,22 @@
 @import '../../assets/swiper/swiper-3.4.2.min.css';
 // @import '../../assets/animate.min.css';
 
+img[lazy=loading] {
+    /*your style here*/
+    display: block;
+    margin: 0 auto;
+    width: 100px !important;
+  }
+img[lazy=error] {
+     display: block;
+    margin: 0 auto;
+    width: 100px !important;
+    /*your style here*/
+  }
+img[lazy=loaded] {
+    width: 100%;
+    /*your style here*/
+  }
 .home_page{
     display: flex;
     flex-direction: column;
@@ -18,6 +34,7 @@
             width: 100%;
             background-image: url('../../assets/ly-use/logo.png');
             background-size: cover;
+            opacity: 0.8;
             span{
                 display:block;
                 float: right;
@@ -61,6 +78,7 @@
                     color: $mainColorr;
                     font-size: 24px;
                     margin:5px 0 0 5px;
+                    opacity: 0.5;
                 }
             }
         }
@@ -101,6 +119,7 @@
                 font-size: 16px;
                 background-color: $mainColorr;
                 color: $mainColorw;
+                opacity: 0.4;
             }
             ul{
                 li{

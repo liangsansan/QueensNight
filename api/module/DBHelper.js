@@ -54,7 +54,7 @@ module.exports = {
     },
 
     // id查询商品
-    getProdut : function(_collection, data, key, callback){
+    getProduct : function(_collection, data, key, callback){
         db.open(function(error, db){
             if(error){
                 console.log('connect db:', error);
@@ -78,5 +78,10 @@ module.exports = {
                 db.close();
             })
         })	
+    },
+
+     //关键字搜索
+    getProductsBykeyword:function(){
+        
     }
 }

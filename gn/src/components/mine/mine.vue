@@ -43,8 +43,8 @@
 
 	// 如果拿不到用户名 跳转到登录页
 	if(!localStorage.userName){
-		$.alert('请先登录')
-		router.push('login')
+		// $.alert('请先登录')
+		// router.push('login')
 	}
 
 	export default {

@@ -30,6 +30,7 @@
     "sass-loader": "^5.0.1",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
+    "vue-lazyload": "^1.0.5",
     "vue-loader": "^11.0.0",
     "vue-template-compiler": "^2.1.10",
     "vue-validator": "^3.0.0-alpha.2",

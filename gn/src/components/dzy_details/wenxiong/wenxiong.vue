@@ -1,7 +1,7 @@
 <template>
     <div class="wenxiong_main">
 		<div class="w_m_box">
-			<div>5 
+			<div>5 </div>
 		</div>
 	</div>
 </template>

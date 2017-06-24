@@ -55,7 +55,7 @@ exports.Register = function(app){
     // id查询获取商品
 	app.post('/getProdut', urlencodedParser, function(request, response){
 		response.setHeader("Access-Control-Allow-Origin","*");
-		DB.getProdut('products', request.body, 'id', function(data){
+		DB.getProduct('products', request.body, 'id', function(data){
 			if(data){
 				response.send(ApiResult(true,'查找成功',data))
 			} else {

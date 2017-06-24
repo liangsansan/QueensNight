@@ -1,6 +1,7 @@
 var path = require('path');
 
 var AccountRouter = require('./AccountRouter');
+var HomeRouter=require('./HomeRouter');
 
 exports.Register = function(express){
     var app = express();
@@ -21,6 +22,9 @@ exports.Register = function(express){
     })
 
     AccountRouter.Register(app);
+
+    // 首页接口
+    HomeRouter.Handle(app);
 
     return app;
 }
