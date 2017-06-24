@@ -81,7 +81,7 @@ module.exports = {
 
      //关键字搜索
     getProductsBykeyword:function(_collection, data, key, callback){
-          db.open(function(error, db){
+        db.open(function(error, db){
             if(error){
                 console.log('connect db:', error);
 		    }
@@ -103,7 +103,9 @@ module.exports = {
                 }
                 db.close();
             })
-        })	
+        })
+    },
+
 
     //添加商品
     addProducts: function(_collection,data,key,callback){
@@ -112,9 +114,8 @@ module.exports = {
                 console.log('db:',error);
             }
             db.collection(_collection,function(error,collection){
-                var id_obj = {};
+                var title_obj = {};
                 title_obj[key] = data[key];
-                console.log(id_obj);
                 collection.find(title_obj).toArray(function(error,docs){
                     console.log(docs.length);
                     if(docs.length >=1){
@@ -124,6 +125,7 @@ module.exports = {
                         var obj = {};
                         for(var key in data){
                             obj[key] = data[key];
+                            console.log(obj)
                         }
                         collection.insert(obj);
                         callback(data);
