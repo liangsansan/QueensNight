@@ -15,8 +15,6 @@
 				<ul class="rs-sub-nav">
 					<li><router-link to="/admin/list">管理商品</router-link></li>
 					<li><router-link to="/admin/add">添加商品</router-link></li>
-					<!--<li><router-link to="/">删除商品</router-link></li>
-					<li><router-link to="/">修改商品</router-link></li>-->
 				</ul>
 			</li>
 			<li class="rs-nav-item" @click="toggleNavItem">

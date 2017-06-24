@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
 	routes: [{
-		path: '/admin',
+		path: '/admin/list',
 		name: 'home',
 		component: HomeComponent,
 		children: [{
