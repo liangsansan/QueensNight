@@ -9,6 +9,8 @@ import RegisterComponent from '../components/register/register.vue'
 //我的..
 import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
+import AddAdComponent from '../components/address/address.vue'
+import AddComponent from '../components/address/add/add.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +39,17 @@ const router = new VueRouter({
 		path:'/myWallet',
 		name:'myWallet',
 		component:WalletComponent
+	},{
+		path:'/address',
+		name:'address',
+		component:AddAdComponent,
+		children:[
+			{
+				path:'/address/add',
+				name:'add',
+				component:AddComponent
+			}
+		]
 	}]
 })
 

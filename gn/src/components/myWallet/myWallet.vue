@@ -11,11 +11,11 @@
 		<article>
 			<div class="hbmain-content">
 				<ul class="wallet-nav" >
-					<li class="active" @click="toggleItem().bind(this)">我的积分</li>
-					<li @click="toggleItem">我的预存款</li>
-					<li @click="toggleItem">我的优惠券</li>
+					<li class="active">我的积分</li>
+					<li>我的预存款</li>
+					<li>我的优惠券</li>
 				</ul>
-				<div class="pocket-int" v-show='true'>
+				<div class="pocket-content pocket-int" v-show='true'>
 					<div class="showIntegral inte">您当前有效积分 : <span class="integralData">0</span></div>
 					<div class="pocket-action inte">尚未获取到积分</div>
 					<div class="pocket-rules inte">
@@ -29,7 +29,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="pocket-money inte" v-show='false'>
+				<div class="pocket-content pocket-money inte" v-show='false'>
 					<p>您当前预存款余额为 <span>0.0</span> | <span>预存款充值</span>	</p>
 					<div class="tradedetail">
 						<h4>预存款交易记录 :</h4>
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="poket-ticket inte" v-show='false'>
+				<div class="pocket-content poket-ticket inte" v-show='false'>
 					<div class="tradedetail">
 						<h4>我的优惠券</h4>
 						<div class="content">
@@ -57,6 +57,18 @@
 	import $ from 'jquery'
 	import router from '../../router/index.js'
 
+	console.log($('.wallet-nav >li').eq(0)[0])
+	$('.wallet-nav >li').eq(0).click(function(){console.log(123)})
+	$('.wallet-nav').on('click','>li', function() {
+		console.log(123)
+            //1>清除所有active 隐藏所有图片
+            $('.wallet-nav >li').attr('class', '');
+            $('pocket-content').css('display', 'none');
+            //2>给当前点击的添加active
+            $(this).attr('class', 'active');
+            //3>利用idx显示当前图片 index()搜索匹配的元素，并返回相应元素的索引值，从0开始计数。 
+            $('pocket-content').eq($(this).index()).fadeToggle('slow');
+        })
 	export default {
 		data:function(){
 			return {
@@ -64,12 +76,12 @@
 			}
 		},
 		methods:{
-			toggleItem(eve){
-				console.log(eve)
-				$('.wallet-nav li').attr('class','');
-				$(eve.target).attr('class','active')
-			}
-			,		
+			// toggleItem(eve){
+			// 	console.log(eve)
+			// 	$('.wallet-nav li').attr('class','');
+			// 	$(eve.target).attr('class','active')
+			// }
+			// ,		
 			goback(){
 				router.go(-1)
 			}

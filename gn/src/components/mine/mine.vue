@@ -58,7 +58,8 @@
 				console.log(123)
 				window.history.go(-1)
 			},
-			allOrd(){
+			allOrd(){	
+				
 				$.alert('您还没有订单,快去买买吧')
 			},
 			myWallet(){
@@ -71,7 +72,7 @@
 				
 			},
 			showAdd(){
-
+				router.push('address')
 			},
 			rePsw(){
 			}
