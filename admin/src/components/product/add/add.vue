@@ -268,36 +268,8 @@
         },
         created(){
             // this.$parent.$emit('dk','hehe')
-            var self = this;
-            console.log(self)
-            var tools = {
-                add: {
-                    text: '保存',
-                    event: () => {
-                        if(!$(this.$refs.clientForm).valid()){
-                            return false;
-                        }
-                        http.post('Employee/Save', self.dataform)
-                        .then(response => {
-                            if(response.status){
-                                $.alert('保存成功!', function(){
-                                    router.push({name: 'clients'});
-                                })
-                            } else {
-                                $.alert(response.msg);
-                            }
-                        })
-                    },
-                },
-                back: {
-                    text: '返回',
-                    class: 'btn-goback',
-                    event: () => {
-                        router.push({name: 'clients'})
-                    }
-                }
-            }
-            this.$parent.addTool(tools);
+            var self = this.dataform;
+            console.log(self);
         }
     }
 </script>

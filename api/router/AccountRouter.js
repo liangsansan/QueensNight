@@ -61,6 +61,7 @@ exports.Register = function(app){
             
         })
     });
+    //添加商品
     app.post('/addProducts', urlencodedParser, function(request, response){
         response.setHeader("Access-Control-Allow-Origin","*");
         DB.addProducts('products', request.body, 'qnTitle', function(data){
