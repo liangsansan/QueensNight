@@ -1,7 +1,18 @@
 var DB = require('../module/DBHelper');
 var ApiResult = require('../module/ApiResult');
 var bodyParser = require('body-parser');
-
+var multer = require ('multer');
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var storage = multer.diskStorage({  
+  destination: function (req, file, cb) {  
+    cb(null, '../gn/src/assets/imgs/')  
+  },  
+  filename: function (req, file, cb) {  
+      var fileFormat = (file.originalname).split(".");
+      cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);    
+  }  
+}) 
+var upload = multer({ storage: storage })
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 exports.Register = function(app){
@@ -56,20 +67,33 @@ exports.Register = function(app){
     app.post('/getProduct',urlencodedParser,function(request,response){
         response.setHeader("Access-Control-Allow-Origin","*");
         DB.get('products',{},function(result){
-                console.log(result,"result")
             response.send(result)
             
         })
     });
-    //添加商品
-    app.post('/addProducts', urlencodedParser, function(request, response){
-        response.setHeader("Access-Control-Allow-Origin","*");
+    //添加商品(上传图片)
+    app.post('/addProducts', upload.fields([{ name:'qnDetailsImg', maxCount: 10 },{name: 'qnDetailsTextImg',maxCount: 10}]), function(request, response) {
+        var bannerImg = [];
+        var detailsImg = [];
+        if(request.files.qnDetailsImg){
+            request.files.qnDetailsImg.map(function(item,index){
+                return bannerImg.push(item.filename)
+            })
+            request.body.qnDetailsImg = bannerImg;
+        }
+        if(request.files.qnDetailsTextImg){
+            request.files.qnDetailsTextImg.map(function(item,index){
+                return detailsImg.push(item.filename)
+            })
+            request.body.qnDetailsTextImg = detailsImg;
+        }
+        console.log(request.body)
         DB.addProducts('products', request.body, 'qnTitle', function(data){
-            if(data){
-                response.send(apiResult(true,'提交成功'))
+            if('qnTitle' != '' || data){
+                response.send(ApiResult(true,'提交成功'))
             }else{
-                response.send(apiResult(false, 'qnTitle重复，提交失败'))
+                response.send(ApiResult(false, 'qnTitle重复，提交失败'))
             }
-        })
+        }) 
     });
 }

@@ -85,9 +85,8 @@ module.exports = {
                 console.log('db:',error);
             }
             db.collection(_collection,function(error,collection){
-                var id_obj = {};
+                var title_obj = {};
                 title_obj[key] = data[key];
-                console.log(id_obj);
                 collection.find(title_obj).toArray(function(error,docs){
                     console.log(docs.length);
                     if(docs.length >=1){
@@ -97,6 +96,7 @@ module.exports = {
                         var obj = {};
                         for(var key in data){
                             obj[key] = data[key];
+                            console.log(obj)
                         }
                         collection.insert(obj);
                         callback(data);
