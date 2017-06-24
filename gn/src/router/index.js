@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
-import HomeComponent from '../components/home/home.vue'
 import CarComponent from '../components/car/car.vue'
 // 登录注册
 import LoginComponent from '../components/login/login.vue'
