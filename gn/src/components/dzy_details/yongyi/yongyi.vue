@@ -1,6 +1,6 @@
 <template>
     <div class="wenxiong_main">
-		<router-link to="#">
+		<router-link to="/list">
             <div class="w_m_box" v-for=" item in max(res)" v-if="classify==item.qnClassify">
                 <div class="w_m_img_box" >
                     <!--
@@ -27,7 +27,7 @@ import base from'../wenxiong/base.js'
 		data(){
 			return {
 				res:{},
-				classify:'毛衣',
+				classify:'泳衣',
 				da:'',
 				src1:base.base,
 				
