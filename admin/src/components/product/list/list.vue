@@ -1,5 +1,31 @@
 <template>
     <div class="contianer">
+        <div class="form-group">
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">商品名称</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="title" type="text" v-model="dataform.qnTitle" class="form-control required">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">商品原价</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="primaryPrices" type="text" v-model="dataform.qnPrimaryPrices" class="form-control required">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">折扣优惠</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="discountPrices" type="text" v-model="dataform.qnDiscountPrices" class="form-control required">
+                        </div>
+                    </div>
+                </div>
         <table class="table table-hover">
             <thead>
                 <tr>
