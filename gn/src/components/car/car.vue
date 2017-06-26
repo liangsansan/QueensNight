@@ -15,30 +15,31 @@
                 </div>
                 <div class="car_list">
                     <ul>
-                        <li>
+                        
+                        <li v-for="(item, index) in products[0]">
                             <span class="check" @click="checked"></span>
                             <img src="../../assets/imgs/01.jpg" alt="">
-                            <span class="car_title">性感内衣性感内衣性感内衣性感内衣性感内衣v</span>
-                            <span class="car_color">颜色：黑色</span>
-                            <span class="car_chima">尺码：36D</span>
-                            <span class="car_price">188</span>
+                            <span class="car_title">{{item.qnTitle}}</span>
+                            <span class="car_color">颜色：{{item.qnColor[0]}}</span>
+                            <span class="car_chima">尺码：{{item.qnSize[0]}}</span>
+                            <span class="car_price">{{item.qnPrimaryPrices}}</span>
                             <div class="car_shuliang">
                                 <span class="jia iconfont icon-xiaojiantou_shang_mianxing-copy" @click="zeng"></span>
-                                <input type="text" class="car_count" value="2">
+                                <input type="text" class="car_count" v-model="qty">
                                 <span class="jian iconfont icon-xiaojiantou_xia_mianxing-copy" @click="shan"></span>
                             </div>
                         </li>
-                        <li>
-                            <span class="check"></span>
+                        <li v-for="(item, index) in products[0]">
+                            <span class="check" @click="checked"></span>
                             <img src="../../assets/imgs/01.jpg" alt="">
-                            <span class="car_title">性感内衣性感内衣性感内衣性感内衣性感内衣v</span>
-                            <span class="car_color">颜色：黑色</span>
-                            <span class="car_chima">尺码：36D</span>
-                            <span class="car_price">188</span>
+                            <span class="car_title">{{item.qnTitle}}</span>
+                            <span class="car_color">颜色：{{item.qnColor[0]}}</span>
+                            <span class="car_chima">尺码：{{item.qnSize[0]}}</span>
+                            <span class="car_price">{{item.qnPrimaryPrices}}</span>
                             <div class="car_shuliang">
-                                <span class="jian iconfont icon-xiaojiantou_shang_mianxing-copy"></span>
-                                <input type="text" class="car_count" value="2">
-                                <span class="jia iconfont icon-xiaojiantou_xia_mianxing-copy"></span>
+                                <span class="jia iconfont icon-xiaojiantou_shang_mianxing-copy" @click="zeng"></span>
+                                <input type="text" class="car_count" v-model="qty">
+                                <span class="jian iconfont icon-xiaojiantou_xia_mianxing-copy" @click="shan"></span>
                             </div>
                         </li>
                     </ul>
@@ -49,9 +50,9 @@
             <div class="car_heji">
                 <i class="iconfont icon-gouwuche"></i>
                 <span class="total_msg">合计：</span>
-                <span class="total_price">188</span>
+                <span class="total_price">{{totalPrice}}</span>
             </div>
-            <div class="delete">删除</div>
+            <div class="delete" @click="Delete">删除</div>
             <div class="car_gopay">
                 去结算
             </div>
@@ -63,14 +64,23 @@
     import './car.scss'
     import './car.js'
     import $ from 'jquery'
+    import http from '../../utils/HttpClient'
 
     export default {
         components:{
             
         },
+        computed:{
+            totalPrice:function (){
+                var aa = $('.check[check]').next('.car_price').html()
+                console.log(aa)
+                return aa
+            }
+        },
         data(){
             return{
-
+                products:[],
+                qty:12
             }
         },
         methods:{
@@ -87,19 +97,51 @@
                     $('.check').attr("check","checked");
                 }
             },
-            checked(){
-                $('.check').addClass('check_click');
-                $('.check').attr("check","checked");
+            checked(event){
+                var self = $(event.target);
+                if(self.hasClass('check_click')){
+                    self.removeClass('check_click');
+                    self.removeAttr("check");
+                }else{
+                    self.addClass('check_click');
+                    self.attr("check","checked");
+                }
             },
-            zeng(e){
-                // let count = event.currentTarget.next().val();
-                // let count = event.target.next().val();
+            zeng(event){
+                // console.log(event.target)
+                // var cal = $(event.target);
+                // let count = cal.next().val();
                 // count ++;
-                // console.log(event.currentTarget.next())
+                // console.log(count)
+                this.qty++
+                console.log($('.check'))
             },
             shan(){
-                console.log(event.currentTarget)
+                // console.log(event.currentTarget)
+                // let aa = $('.check[check]').parent('li').detach()
+                // console.log(aa)
+                this.qty--
+            },
+            Delete(){
+                $('.check[check]').parent('li').detach()
             }
+            
+        },
+        created:function(){
+            // $.post('http://localhost:888/' +  'getProduct', {}, function(response){
+            //     // console.log(response.data)
+            //     // var data = response.data
+            //     this.products.push(response.data);
+            // }.bind(this))
+            http.post('getProduct', {})
+				.then(response => {
+                    // if(response.state){
+					// 	this.products.push(response.data);
+					// }
+					// console.log(response.data)
+                    this.products.push(response.data);
+				})
+
         }
     }
 

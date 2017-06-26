@@ -7,7 +7,7 @@ import CarComponent from '../components/car/car.vue'
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
 //我的..
-import MineComponent from '../components/mine/mine.vue'
+// import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
 import AddAdComponent from '../components/address/address.vue'
 import AddComponent from '../components/address/add/add.vue'
@@ -18,11 +18,6 @@ const router = new VueRouter({
 	hashbang: true,
   	history: true,
 	routes: [{
-		path: '/',
-		name: 'home',
-		component: HomeComponent,
-		children: []
-	},{
 		path: '/car',
 		name: 'car',
 		component: CarComponent
@@ -35,11 +30,6 @@ const router = new VueRouter({
 		path:'/register',
 		name:'register',
 		component:RegisterComponent
-	},{
-		path:'/mine',
-		name:'mine',
-		component:MineComponent,
-		children:[]
 	},{
 		path:'/myWallet',
 		name:'myWallet',

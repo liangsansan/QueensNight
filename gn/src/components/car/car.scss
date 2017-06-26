@@ -94,7 +94,7 @@
                             // float: left;
                             border: 1px solid #ccc;
                             display: block;
-                            width: 20px;
+                            width: 30px;
                             height: 20px;
                             line-height: 20px;
                             color:$mainColor;
@@ -104,7 +104,7 @@
                         }
                         .car_count{
                             // float: left;
-                            width: 20px;
+                            width: 30px;
                             height: 20px;
                             border:0;
                             text-align: center
@@ -127,6 +127,7 @@
             padding-left: 5px;
             height: 40px;
             color:$mainColorw;
+            position: relative;
             i{font-size: 28px; color:$mainColor;}
             .total_msg{
                 margin-left: 0px;
@@ -135,7 +136,14 @@
             }
             .total_price{
                 color: $mainColorc1;
+                // display: block;
+                position: absolute;
+                width: 120px;
+                top: 17px;
                 font-size: 13px;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space: nowrap;
                 &::before{
                     content: '￥';
                 }
