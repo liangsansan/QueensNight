@@ -41,11 +41,11 @@ const router = new VueRouter({
 	},{
 		path:'/register',
 		name:'register',
-		// component:RegisterComponent
+		component:RegisterComponent
 	},{
 		path:'/mine',
 		name:'mine',
-		// component:MineComponent,
+		component:MineComponent,
 		children:[]
 	},{
 		path:'/list',
