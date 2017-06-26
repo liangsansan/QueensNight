@@ -46,6 +46,7 @@
 					<li v-for='item in imgList'>
 						
 						<img v-lazy='imgUrl+item.imgurl' @click="$router.push({name:'details',query:{series:item.keyword}})">
+
 					</li>
 				</ul>
 			</div>
