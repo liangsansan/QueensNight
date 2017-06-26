@@ -47,6 +47,7 @@
 		// router.push('login')
 	}
 
+
 	export default {
 		data: function(){
 			return {

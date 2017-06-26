@@ -9,7 +9,7 @@
                          <i class="iconfont icon-sousuo-sousuo"></i>
                     </div>
                 </div>
-                <i class="iconfont icon-xiao46"></i>
+                <i class="iconfont icon-xiao46" @click="dis(dis1)"></i>
             </div>
         </div>
         <div class="details_main">
@@ -17,18 +17,22 @@
                 <div class="details_tab swiper-container">
                     <div class="d_t_div swiper-wrapper">
                         <!--router-link会阻止click事件-->
-                        <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text d_t_text_active" @click.native="checkColor">文胸</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">毛衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">泳衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">内裤</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">丝袜</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text" @click.native="checkColor">折扣</router-link></div> 
+                        <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text wenxiong" @click.native="checkColor" name="wenxiong">文胸</router-link></div>
+                        <div class="swiper-slide "><router-link to="/maoyi" class="d_t_text maoyi" @click.native="checkColor" name="maoyi">毛衣</router-link></div>
+                        <div class="swiper-slide "><router-link to="/yongyi" class="d_t_text yongyi" @click.native="checkColor" name="yongyi">泳衣</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text neiku" @click.native="checkColor" name="neiku">内裤</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text siwa" @click.native="checkColor" name="siwa">丝袜</router-link></div>
+                        <div class="swiper-slide "><router-link to="#" class="d_t_text zhekou" @click.native="checkColor" name="zhekou">折扣</router-link></div> 
                     </div>
                 </div>
             </div>
             <div class="details_main_main">
-                <router-view></router-view>
+                <router-view ></router-view>
             </div>
+        </div>
+        <div class="details_paixu">
+            <div class="paixu_jiage" @click="check(priceMax)">价格<i class="iconfont icon-xiaojiantou_xia_mianxing-copy" v-if="priceMax"></i><i class="iconfont icon-xiaojiantou_shang_mianxing-copy" v-if="priceMin"></i></div>
+            
         </div>
     </div>
 </template>
@@ -53,10 +57,19 @@ import $ from 'jquery'
                 paginationClickable: true,
                 grabCursor: true
             }) 
+            this.name1 = this.$route.name ;
+            this.classN = '.' + this.name1; 
+            
+            $(this.classN).addClass('d_t_text_active');
+            console.log($(this.classN))
         },
 		data(){
 			return {
-				
+				name1:"",
+                classN:'',
+                priceMax:false,
+                priceMin:true,
+                dis1:false,
 			}
 		},
         beforeUpdate(){
@@ -71,10 +84,58 @@ import $ from 'jquery'
                 e.target.classList.add('d_t_text_active');
                 
             },
+            dis:function(dis1){
+                if(!dis1){
+                     $('.details_paixu').css('right','0');
+                     this.dis1 = !this.dis1;
+                     console.log(this)
+                }else{
+                    
+                    $('.details_paixu').css('right','-1rem');
+                   this.dis1 = !this.dis1;
+                }
+                
+            },
+            check:function(priceMax){
+                var res = this.$children[7].res;
+                if(!priceMax){
+                    
+                    
+                     for(var i=0;i<res.length;i++){
+                         for(var j=0;j<res.length-1;j++){
+                             
+                             if(res[j].qnDiscountPrices <res[j+1].qnDiscountPrices){
+                                    var temp = res[j+1].qnDiscountPrices;//交换元素    
+								    res[j+1].qnDiscountPrices = res[j].qnDiscountPrices;    
+								    res[j].qnDiscountPrices = temp; 
+                             }
+                         }
+                     }
+                     
+                     this.priceMax = !this.priceMax;
+                     this.priceMin = !this.priceMin;
+                     this.$children[7].res = res;
+                }else{
+                    for(var i=0;i<res.length;i++){
+                         for(var j=0;j<res.length-1;j++){
+                             
+                             if(res[j].qnDiscountPrices > res[j+1].qnDiscountPrices){
+                                    var temp = res[j+1].qnDiscountPrices;//交换元素    
+								    res[j+1].qnDiscountPrices = res[j].qnDiscountPrices;    
+								    res[j].qnDiscountPrices = temp; 
+                             }
+                         }
+                     }
+                    this.priceMax = !this.priceMax;
+                     this.priceMin = !this.priceMin;
+                     this.$children[7].res = res;
+                }
+            }
             
 		},
-		created(){
-
+		updated(){
+            
+            
 		}
 	}
    

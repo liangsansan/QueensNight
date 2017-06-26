@@ -3,9 +3,10 @@ import VueRouter from 'vue-router'
 import http from '../utils/HttpClient'
 
 import HomeComponent from '../components/home/home.vue'
-import Details from '../components/dzy_details/dzy_details.vue'
+import List from '../components/dzy_details/dzy_details.vue'
 import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
-
+import Maoyi from '../components/dzy_details/maoyi/maoyi.vue'
+import Yongyi from '../components/dzy_details/yongyi/yongyi.vue'
 // 登录注册
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
@@ -31,25 +32,33 @@ const router = new VueRouter({
 	},{
 		path:'/register',
 		name:'register',
-		component:RegisterComponent
+		// component:RegisterComponent
 	},{
 		path:'/mine',
 		name:'mine',
-		component:MineComponent,
+		// component:MineComponent,
 		children:[]
 	},{
-		path:'/details',
-		name:'details',
-		component:Details,
+		path:'/list',
+		name:'list',
+		component:List,
 		children:[{
 			path:'/wenxiong',
 			name:'wenxiong',
 			component:Wenxiong
+		},{
+			path:'/maoyi',
+			name:'maoyi',
+			component:Maoyi
+		},{
+			path:'/yongyi',
+			name:'yongyi',
+			component:Yongyi
 		}]
 	},{
 		path:'myWallet',
 		name:'myWallet',
-		component:WalletComponent
+		// component:WalletComponent
 	}]
 })
 
