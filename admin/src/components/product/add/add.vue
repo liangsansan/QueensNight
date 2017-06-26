@@ -32,7 +32,7 @@
                             <input id="discountPrices" type="text" v-model="dataform.qnDiscountPrices" class="form-control required">
                         </div>
                     </div>
-                </div>,
+                </div>
                 <div class="form-group">
                                                      
                     <div class="col-sm-1">
@@ -282,7 +282,7 @@
                         dataType: 'json',
                         url: erp.baseUrl　+ 'addProducts',
                         success:function(data){
-	                    },
+	                    }
                     })
                     alert('上传成功')
                 }
