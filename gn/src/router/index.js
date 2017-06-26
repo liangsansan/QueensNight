@@ -7,12 +7,16 @@ import List from '../components/dzy_details/dzy_details.vue'
 import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
 import Maoyi from '../components/dzy_details/maoyi/maoyi.vue'
 import Yongyi from '../components/dzy_details/yongyi/yongyi.vue'
+import CarComponent from '../components/car/car.vue'
 // 登录注册
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
 //我的..
 import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
+import AddAdComponent from '../components/address/address.vue'
+import AddComponent from '../components/address/add/add.vue'
+import changePswComponent from '../components/changePsw/changePsw.vue'
 
 
 Vue.use(VueRouter)
@@ -26,9 +30,14 @@ const router = new VueRouter({
 		component: HomeComponent,
 		children: []
 	},{
+		path: '/car',
+		name: 'car',
+		component: CarComponent
+	
+	},{
 		path: '/login',
 		name: 'login',
-		// component: LoginComponent
+		component: LoginComponent
 	},{
 		path:'/register',
 		name:'register',
@@ -56,9 +65,22 @@ const router = new VueRouter({
 			component:Yongyi
 		}]
 	},{
-		path:'myWallet',
+		path:'/myWallet',
 		name:'myWallet',
-		// component:WalletComponent
+		component:WalletComponent
+	},{
+		path:'/changePsw',
+		name:'changePsw',
+		component:changePswComponent
+	},{
+		path:'/address',
+		name:'address',
+		component:AddAdComponent,
+		children:[{
+			path:'/address/add',
+			name:'add',
+			component:AddComponent
+		}]
 	}]
 })
 

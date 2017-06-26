@@ -59,23 +59,23 @@
 				console.log(123)
 				window.history.go(-1)
 			},
-			allOrd(){
+			allOrd(){	
+				
 				$.alert('您还没有订单,快去买买吧')
 			},
 			myWallet(){
 				router.push('myWallet')
-				$.alert('我的钱包')
 			},
 			myStar(){
-				$.alert('我的关注')
+				$.alert('啊!还没关注')
 			},
 			ask(){
-				
 			},
 			showAdd(){
-
+				router.push('address')
 			},
 			rePsw(){
+				router.push('changePsw')
 			}
 		}
 	}

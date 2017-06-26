@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 exports.Register = function(app){
+    // 登录
     app.post('/login', urlencodedParser, function(request, response){
         if(!request.body || !request.body.username){
             response.send(ApiResult(false, '用户名不能为空！'));
@@ -27,7 +28,7 @@ exports.Register = function(app){
             })
         }
     });
-
+    // 注册
     app.post('/register', urlencodedParser, function(request, response){
         console.log(request.body)
         if(!request.body || !request.body.username){
@@ -52,8 +53,19 @@ exports.Register = function(app){
             })
         }        
     });
+
+
+// 修改密码
+app.post('/resetpsw',urlencodedParser,function(req,res){
+    // res.setHeader('Access-Control-Allow-Origin','*');
+    usedb.resetpsw('userData',req.body,'username',function(data){
+        res.send(apiResult(true, '修改成功','修改成功'));
+    })
+});
+    // 查询某个用户所有的信息(包括收货地址)
+    // 增加某个用户的收货地址信息
     // id查询获取商品
-	app.post('/getProdut', urlencodedParser, function(request, response){
+	app.post('/getProduct', urlencodedParser, function(request, response){
 		response.setHeader("Access-Control-Allow-Origin","*");
 		DB.getProduct('products', request.body, 'id', function(data){
 			if(data){
@@ -64,4 +76,25 @@ exports.Register = function(app){
 		})
 	});
 
+
+    //查找所有商品
+    app.post('/getProduct',urlencodedParser,function(request,response){
+        response.setHeader("Access-Control-Allow-Origin","*");
+        DB.get('products',{},function(result){
+                console.log(result,"result")
+            response.send(result)
+            
+        })
+    });
+    // 添加商品
+    app.post('/addProducts', urlencodedParser, function(request, response){
+        response.setHeader("Access-Control-Allow-Origin","*");
+        DB.addProducts('products', request.body, 'qnTitle', function(data){
+            if(data){
+                response.send(apiResult(true,'提交成功'))
+            }else{
+                response.send(apiResult(false, 'qnTitle重复，提交失败'))
+            }
+        })
+    });
 }
