@@ -44,7 +44,8 @@
 				<p>热销商品与个性选择</p>
 				<ul>
 					<li v-for='img in imgList'>
-						<img v-lazy='imgUrl+img'>
+						<img v-lazy='img
+						Url+img'>
 					</li>
 				</ul>
 			</div>
