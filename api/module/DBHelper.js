@@ -52,6 +52,32 @@ module.exports = {
         })
     },
 
+//修改密码
+resetpsw : function(_collection, data,key,callback){
+	db.open(function(error, db){
+		if(error){
+			console.log('connect db:', error);
+		}
+		//Account => 集合名（表名）
+		db.collection(_collection, function(error, collection){
+			if(error){
+				console.log(error);	
+			} else {
+				collection.find({username:data[key]}).toArray(function(err, docs){
+					console.log(docs)
+					if(docs[0]){
+						collection.update({username:data[key]},{$set:{password:data.password}});
+						callback(docs);
+						db.close();
+					}else{
+						callback(null);
+						db.close();
+					}
+				});
+			}
+		})
+	})	
+},
     // id查询商品
     getProduct : function(_collection, data, key, callback){
         db.open(function(error, db){
@@ -103,7 +129,8 @@ module.exports = {
                 }
                 db.close();
             })
-        })	
+        })
+    },
 
     //添加商品
     addProducts: function(_collection,data,key,callback){
@@ -132,6 +159,5 @@ module.exports = {
                 })
             })
         })
-
     }
 }

@@ -66,15 +66,15 @@
 				router.push('myWallet')
 			},
 			myStar(){
-				$.alert('我的关注')
+				$.alert('啊!还没关注')
 			},
 			ask(){
-				
 			},
 			showAdd(){
 				router.push('address')
 			},
 			rePsw(){
+				router.push('changePsw')
 			}
 		}
 	}

@@ -57,7 +57,8 @@
 	import { mapGetters, mapActions } from 'vuex'
 	import $ from 'jquery'
 	import router from '../../router/index.js'
-
+	import http from '../../utils/HttpClient.js'
+	
 	export default {
 		components:{
 

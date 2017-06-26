@@ -10,6 +10,7 @@ $font_size:75;
 }
 @import '../../assets/common/H-ui.reset.css';
 @import '../../assets/bootstrap/css/bootstrap.min.css';
+@import './LArea/css/LArea.css';
 
 #add{
     font-size: 14px;
@@ -53,12 +54,29 @@ $font_size:75;
                 }
         }
     }
-    button#btnAd{
+    button.btn{
         float: right;
         margin-right: 10px;
         z-index:100;   
         background-color:#5e6b85;
         color:#fff;
+    }
+    .slideContent{
+        h4{
+            text-indent: 1em;
+        }
+        padding: 5px;
+        background-color: #fff;
+        width: 100%;
+        position:absolute ;
+        z-index: 10;
+        // bottom: 0;
+        bottom: -100%;
+        left: 0;        
+        input{
+            width: 90%;
+            margin: 10px auto;
+        }
     }
 }
 // ul.foot{

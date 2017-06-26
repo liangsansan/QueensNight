@@ -12,6 +12,8 @@ import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
 import AddAdComponent from '../components/address/address.vue'
 import AddComponent from '../components/address/add/add.vue'
+import changePswComponent from '../components/changePsw/changePsw.vue'
+
 
 Vue.use(VueRouter)
 
@@ -46,14 +48,18 @@ const router = new VueRouter({
 		name:'myWallet',
 		component:WalletComponent
 	},{
+		path:'/changePsw',
+		name:'changePsw',
+		component:changePswComponent
+	},{
 		path:'/address',
 		name:'address',
 		component:AddAdComponent,
 		children:[{
-				path:'/address/add',
-				name:'add',
-				component:AddComponent
-			}]
+			path:'/address/add',
+			name:'add',
+			component:AddComponent
+		}]
 	}]
 })
 
