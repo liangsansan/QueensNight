@@ -4,15 +4,34 @@
 
 
 .car_all{
+    // position: relative;
+    height: 100%;
+    .all_check,.check{
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        border:1px solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 8px;
+    }
+    .check_click{
+        background-color: $mainColor;
+    }
     .car_top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 500;
         height: 40px;
         line-height: 40px;
         background-color: $mainColor;
         color: $mainColorw;
-        i{ margin-left: 10px; float: left; font-size: 22px;}
+        i{ margin-left: 10px; float: left; font-size: 23px;}
         p{margin: 0 34px; font-size: 15px;text-align: center;}
     }
     .car_main{
+        margin-top: 40px;
         height: 100%;
         .car_msg{
             display: none;
@@ -22,51 +41,18 @@
             font-size: 12px;
             a{color: $mainColor;}
         }
-        
-        .chk_1 {
-            display: none;
-        }
-
-        .chk_1 + label {
-            background-color: #FFF;
-            border: 1px solid #C1CACA;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-            padding: 6px;
-            border-radius: 5px;
-            display: inline-block;
-            position: relative;
-            margin-bottom: 0;
-            margin-right: 10px;
-        }
-        .chk_1 + label:active {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .chk_1:checked + label {
-            background-color: #ECF2F7;
-            border: 1px solid #92A1AC;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-            color: #243441;
-        }
-
-        .chk_1:checked + label:after {
-            content: '\2714'; //勾选符号
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            color: #758794;
-            width: 100%;
-            text-align: center;
-            font-size: 10px;
-            padding: 1px 0 0 0;
-            vertical-align: text-top;
-        }
         .car_show{
             .car_allcheck{
                 text-align: left;
                 height: 40px;
-                padding: 11px 10px;
+                line-height: 40px;
+                padding: 0 10px;
+                font-size: 13px;
                 background-color: #f5f5f5;
+                .unall_check{
+                    margin-left: 6px;
+                    color: $mainColor;
+                }
             }
         }
         .car_list{
@@ -81,15 +67,164 @@
                         width: 40px;
                     }
                     .car_title{
-                        margin-left: 10px;
+                        margin-left: 13px;
                         position: absolute;
                         top: 10px;
-                        // display: block;
                         width: 160px;
                         overflow:hidden; 
                         text-overflow:ellipsis;
                         white-space: nowrap;
+                        font-size: 14px;
                     }
+                    .car_color,.car_chima{
+                        margin-left: 13px;
+                        display: inline-block;
+                        width: 70px;
+                        margin-top: 24px;
+                        font-size: 10px;
+                        color:#ccc;
+                    }
+                    .car_price{
+                        position: absolute;
+                        bottom: 3px;
+                        left: 95px;
+                        // margin-left: 13px;
+                        margin-top: 4px;
+                        color: $mainColor;
+                        &::before{
+                            content: '￥'
+                        }
+                    }
+                    .car_shuliang{
+                        position: absolute;
+                        right: 20px;
+                        bottom: 6px;
+                        width: 20px;
+                        height: 60px;
+                        .jian,.jia{
+                            // float: left;
+                            border: 1px solid #ccc;
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            line-height: 20px;
+                            color:$mainColor;
+                            font-size: 17px;
+                            text-align: center;
+                            box-sizing: border-box;
+                        }
+                        .car_count{
+                            // float: left;
+                            width: 20px;
+                            height: 20px;
+                            border:0;
+                            text-align: center
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .car_total{
+        position: fixed;
+        bottom:65px;
+        z-index: 600;
+        height: 40px;
+        width: 100%;
+        font-size: 13px;
+        .car_heji{
+            float: left;
+            width: 65%;
+            padding-left: 5px;
+            height: 40px;
+            color:$mainColorw;
+            position: relative;
+            i{font-size: 28px; color:$mainColor;}
+            .total_msg{
+                margin-left: 0px;
+                color: $mainColorc1;
+                font-size: 13px;
+            }
+            .total_price{
+                color: $mainColorc1;
+                // display: block;
+                position: absolute;
+                width: 120px;
+                top: 17px;
+                font-size: 13px;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                &::before{
+                    content: '￥';
+                }
+            }
+        }
+        .delete{
+            float: left;
+            width: 15%;
+            background-color: $mainColorr1;
+            color:$mainColorw;
+            line-height: 40px;
+            text-align: center;
+        }
+        .car_gopay{
+            width: 20%;
+            float:left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color:$mainColorw;
+            background-color: $mainColorr;
+        }
+    }
+    .car_window{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding-top: 200px;
+        .ask{
+            width: 70%;
+            height: 100px;
+            background-color: #f5f5f5;
+            margin: 0 auto;
+            text-align: right;
+            .ask_close{
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1;
+                margin-right: 8px;
+                padding-top: 5px;
+                color: $mainColor;
+                text-shadow: 0 1px 0 #fff;
+            }
+            .ask_text{
+                padding-top: 6px;
+                text-align: center;
+                color:$mainColorc1;
+            }
+            .ask_btn{
+                padding-top: 10px;
+                span{
+                    display: block;
+                    width: 26%;
+                    text-align: center;
+                    height: 20px;
+                    line-height: 20px;
+                    background-color: $mainColor;
+                    color: $mainColorw;
+                    font-size: 12px;
+                }
+                .ask_yes{
+                    float: left;
+                    margin-left: 15%;
+                }
+                .ask_no{
+                    float: right;
+                    margin-right: 15%;
                 }
             }
         }
