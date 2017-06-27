@@ -85,7 +85,7 @@
 					let[a,b,c]=[this.username,this.password,this.cfpsw];
 					let info={username:a,password:b};
 					console.log(info)
-					$.post('http://localhost:888/' +  'register', info, function(response){
+					$.post('http://10.3.133.25:888/' +  'register', info, function(response){
 						if(response.status ==false){
 							$.alert(response.message)
 						}else if(response.status ==true){

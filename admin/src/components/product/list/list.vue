@@ -128,7 +128,7 @@
         },
         created(){
             var self =this;
-             $.post(erp.baseUrl + 'getProduct',function(response) {
+             $.post( erp.baseUrl　+ 'getProduct',function(response) {
                 // console.log(response.data);
                 self.dataset = response.data;
                 self.dataStatus = response.data;
