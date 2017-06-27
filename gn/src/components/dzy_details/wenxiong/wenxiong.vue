@@ -52,7 +52,7 @@ import base from'../../../../global.js'
  		 	}
 		},																				
 		created(){
-			$.post('http://localhost:888/getProduct1',[],function(res){
+			$.post('http://10.3.133.25:888/getProduct1',[],function(res){
 				var aa = [];
 				for(var i = 0;i<=res.length-1;i++){
 					if(res[i].qnClassify == this.classify){

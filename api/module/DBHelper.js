@@ -121,7 +121,6 @@ resetpsw : function(_collection, data,key,callback){
                                 if(((item.qnTitle).indexOf(str)>-1 )||((item.qnOccasion).indexOf(str)>-1)||((item.qnHomeClass).indexOf(str)>-1)||((item.qnDetailsType).indexOf(str)>-1)){
                                     findarr.push(item);
                                 }
-                            
                         })
                         callback(findarr);
                     });
