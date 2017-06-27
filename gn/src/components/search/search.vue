@@ -24,6 +24,9 @@
                 </ul>
             </div>
             <ul class="search_list">
+                <li v-for="(item,index) in this.data ">
+                  <img v-lazy='baseUrl+item.qnHomeList[0]' @click="$router.push({name:'details',query:{name:item}})"></router-link> 
+                </li>
                 <!--<li><img src="../../assets/ly-use/details/cup1.jpg"> </li>
                 <li><img src="../../assets/ly-use/details/cup1.jpg"> </li>
                 <li><img src="../../assets/ly-use/details/cup1.jpg"> </li>
@@ -56,8 +59,9 @@
         },
         data(){
             return {
-                baseUrl:base.baseUrl,
-                sortShow:''
+                baseUrl:base.imgUrl,
+                sortShow:'',
+                data:{}
             }
         },
 
@@ -68,9 +72,9 @@
                     $.alert('请输入你想要的宝贝！')
                 }else{
                     // 发送请求搜索数据库
-                    http.post('getProdut',{keyword:keyword}).then(response=>{
+                    http.post('search',{keyword:keyword}).then(response=>{
 
-                        console.log(response)
+                       console.log(response.data)
                    })
                 }
             },
@@ -85,8 +89,8 @@
             let keyword=this.$route.query.keyword
             if(keyword){
                http.post('getProdut',{keyword:keyword}).then(response=>{
-
-                   console.log(response)
+                    this.data=response.data;
+                   console.log(response.data)
 
                })
 

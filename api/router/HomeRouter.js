@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 exports.Handle=function(app){
-    app.get('/search',urlencodedParser,function(request,response){
+    app.post('/search',urlencodedParser,function(request,response){
         DB.getProductsBykeyword('products', request.body, 'keyword', function(data){
 			if(data){
 				response.send(ApiResult(true,'查找成功',data))
