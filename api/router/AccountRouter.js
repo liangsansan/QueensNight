@@ -5,54 +5,95 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 exports.Register = function(app){
+
     // 登录
+    // app.post('/login', urlencodedParser, function(request, response){
+    //     if(!request.body || !request.body.username){
+    //         response.send(ApiResult(false, '用户名不能为空！'));
+    //     } else if(!request.body || !request.body.password){
+    //         response.send(ApiResult(false, '密码不能为空！'));
+    //     } else {
+    //         DB.get('userData', {username: request.body.username}, function(result){
+    //             if(!result.status){
+    //                 response.send(result);
+    //             } else {
+    //                 var data = result.data;
+    //                 if(!data[0]){
+    //                     response.send(ApiResult(false, '用户名不存在！'));
+    //                 } else if(data[0].password != request.body.password){
+    //                     response.send(ApiResult(false, '密码错误！'));
+    //                 } else {
+    //                     response.send(ApiResult(true));
+    //                 }
+    //             }
+    //         })
+    //     }
+    // });
     app.post('/login', urlencodedParser, function(request, response){
-        if(!request.body || !request.body.username){
-            response.send(ApiResult(false, '用户名不能为空！'));
-        } else if(!request.body || !request.body.password){
-            response.send(ApiResult(false, '密码不能为空！'));
-        } else {
-            DB.get('userData', {username: request.body.username}, function(result){
+        console.log(request.body)
+            DB.get('account', {username: request.body.username}, function(result){
                 if(!result.status){
                     response.send(result);
                 } else {
                     var data = result.data;
+                    console.log(data)
                     if(!data[0]){
                         response.send(ApiResult(false, '用户名不存在！'));
                     } else if(data[0].password != request.body.password){
                         response.send(ApiResult(false, '密码错误！'));
                     } else {
-                        response.send(ApiResult(true));
+                        response.send(ApiResult(true,'登录成功',data[0].username));
                     }
                 }
             })
-        }
     });
     // 注册
-    app.post('/register', urlencodedParser, function(request, response){
+    // app.post('/register', urlencodedParser, function(request, response){
+    //     console.log(request.body)
+    //     if(!request.body || !request.body.username){
+    //         response.send(ApiResult(false, '用户名不能为空！'));
+    //     } else if(!request.body || !request.body.password){
+    //         response.send(ApiResult(false, '密码不能为空！'));
+    //     } else {
+    //         delete request.body.repassword;
+    //         DB.get('userData', {username: request.body.username}, function(result){
+    //             if(!result.status){
+    //                 response.send(result);
+    //             } else {
+    //                 console.log(result)
+    //                 var data = result.data;
+    //                 if(data[0]){
+    //                     response.send(ApiResult(false, '用户名已被注册'));
+    //                 } else {
+    //                     DB.insert('userData', request.body, function(insertResult){
+    //                         response.send(insertResult);
+    //                     })
+    //                 }
+    //             }
+    //         })
+    //     }        
+    // });
+    // 前端注册
+     app.post('/register', urlencodedParser, function(request, response){
         console.log(request.body)
-        if(!request.body || !request.body.username){
-            response.send(ApiResult(false, '用户名不能为空！'));
-        } else if(!request.body || !request.body.password){
-            response.send(ApiResult(false, '密码不能为空！'));
-        } else {
-            delete request.body.repassword;
-            DB.get('userData', {username: request.body.username}, function(result){
-                if(!result.status){
-                    response.send(result);
+        DB.get('account', {username: request.body.username}, function(result){
+            var obj = request.body;
+            obj.id = obj.username;
+            if(!result.status){
+                response.send(result);
+            } else {
+                var data = result.data;
+                if(data[0]){
+                    response.send(ApiResult(false, '用户名已被注册'));
                 } else {
-                    var data = result.data;
-                    if(data[0]){
-                        response.send(ApiResult(false, '用户名已被注册'));
-                    } else {
-                        DB.insert('userData', request.body, function(insertResult){
-                            response.send(insertResult);
-                        })
-                    }
+                    DB.insert('account',obj, function(insertResult){
+                        response.send(insertResult);
+                    })
                 }
-            })
-        }        
-    });
+            }
+        })      
+    }) 
+
 
 
 // 修改密码
