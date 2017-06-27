@@ -1,7 +1,7 @@
 <template>
     <div class="wenxiong_main">
 		
-            <div class="w_m_box" v-for=" (item,index) in max(res)">
+			<div class="w_m_box" v-for=" (item,index) in max(res)">
 				<router-link :to="{path:'/details',query: {name:res[index]}}">
 					<div class="w_m_img_box" >
 						<!--
@@ -10,18 +10,18 @@
 						<img :src= "src1 + item.qnDetailsImg[0]"  class="w_m_img"/>
 						<p class="w_m_p">{{item.qnTitle}}</p>
 						
-						<div class="w_m_p_box"><span class="w_m_maxPri">${{item.qnDiscountPrices}}</span><span class="w_m_minPri">${{item.qnPrimaryPrices}}</span><span class="w_m_homeclass">{{item.qnHomeClass}}!</span></div>
+						<div class="w_m_p_box"><span class="w_m_maxPri">${{item.qnDiscountPrices}}</span><span class="w_m_minPri">${{item.qnPrimaryPrices}}</span><p class="w_m_homeclass">{{item.qnHomeClass}}!</p></div>
 					</div>
 				</router-link>
-		    </div>
-       
+			</div>
+		
 	</div>
 </template>
 
 <script type="text/javascript">
 import $ from 'jquery'
 import '../wenxiong/wenxiong.scss'
-import base from'../wenxiong/base.js'
+import base from'../../../../global.js'
 	export default {
 		components: {
 		
@@ -29,7 +29,7 @@ import base from'../wenxiong/base.js'
 		data(){
 			return {
 				res:{},
-				classify:'毛衣',
+				classify:'内裤',
 				da:'',
 				src1:base.imgUrl,
 				

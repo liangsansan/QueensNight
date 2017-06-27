@@ -87,7 +87,6 @@ app.post('/resetpsw',urlencodedParser,function(req,res){
 		})
 	});
 
-
     //查找所有商品
     app.post('/getProduct',urlencodedParser,function(request,response){
         response.setHeader("Access-Control-Allow-Origin","*");
@@ -149,4 +148,12 @@ app.post('/resetpsw',urlencodedParser,function(req,res){
             })
         })       
 	});
+
+    app.post('/getProduct1',urlencodedParser,function(request, response){
+        console.log(request.body);
+		DB.exists('products',{},[],function(result){
+			response.send(result);
+		});
+ 	 });
+
 }

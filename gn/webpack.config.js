@@ -4,7 +4,9 @@ var webpack = require('webpack')
 module.exports = {
   entry: './src/app.js',
   output: {
+    //build时js存放的路径
     path: path.resolve(__dirname, './dist'),
+    //run dev时js存放的路径
     publicPath: '/dist/',
     filename: 'build.js'
   },

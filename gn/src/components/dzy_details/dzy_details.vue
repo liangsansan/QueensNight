@@ -5,8 +5,8 @@
                 <router-link to="/"><i class="iconfont icon-fanhui"></i></router-link>
                 <div class="d_s_i_box">
                     <div class="d_s_i_b1">
-                        <input type="text" placeholder="搜索一下" class="d_s_input"/>
-                         <i class="iconfont icon-sousuo-sousuo"></i>
+                        <input type="text" placeholder="搜索一下" class="d_s_input" v-model="inputV"/>
+                         <router-link  :to="{path:'/search',query: {keyword:inputV}}"><i class="iconfont icon-sousuo-sousuo" ></i></router-link>
                     </div>
                 </div>
                 <i class="iconfont icon-xiao46" @click="dis(dis1)"></i>
@@ -20,9 +20,9 @@
                         <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text wenxiong" @click.native="checkColor" name="wenxiong">文胸</router-link></div>
                         <div class="swiper-slide "><router-link to="/maoyi" class="d_t_text maoyi" @click.native="checkColor" name="maoyi">毛衣</router-link></div>
                         <div class="swiper-slide "><router-link to="/yongyi" class="d_t_text yongyi" @click.native="checkColor" name="yongyi">泳衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text neiku" @click.native="checkColor" name="neiku">内裤</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text siwa" @click.native="checkColor" name="siwa">丝袜</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text zhekou" @click.native="checkColor" name="zhekou">折扣</router-link></div> 
+                        <div class="swiper-slide "><router-link to="/neiku" class="d_t_text neiku" @click.native="checkColor" name="neiku">内裤</router-link></div>
+                        <div class="swiper-slide "><router-link to="/siwa" class="d_t_text siwa" @click.native="checkColor" name="siwa">丝袜</router-link></div>
+                        <div class="swiper-slide "><router-link to="/zhekou" class="d_t_text zhekou" @click.native="checkColor" name="zhekou">折扣</router-link></div> 
                     </div>
                 </div>
             </div>
@@ -70,6 +70,7 @@ import $ from 'jquery'
                 priceMax:false,
                 priceMin:true,
                 dis1:false,
+                inputV:'',
 			}
 		},
         beforeUpdate(){
