@@ -73,7 +73,7 @@
 		},
 		created:function(){
 			let self = this
-			$.post('http://localhost:888/' +  'getsite', {}, function(response){
+			$.post('http://10.3.133.25:888/' +  'getsite', {}, function(response){
 				if(response.status ==false){
 					$.alert(response.message)
 				}else if(response.status ==true){
@@ -479,7 +479,7 @@
 				var addObj = {nameData,numData,addStr};
 				console.log(addStr,addObj);
 				var self = this
-				$.post('http://localhost:888/' +  'addsite', addObj, function(response){
+				$.post('http://10.3.133.25:888/' +  'addsite', addObj, function(response){
 					console.log(response)
 					if(response.status == false){
 						$.alert(response.message)
