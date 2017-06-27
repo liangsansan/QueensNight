@@ -98,7 +98,8 @@ import $ from 'jquery'
                 
             },
             check:function(priceMax){
-                var res = this.$children[7].res;
+                console.log(this.$children[1]);
+                var res = this.$children[0].res;
                 if(!priceMax){
                     
                     

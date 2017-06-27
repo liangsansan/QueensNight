@@ -5,27 +5,28 @@
             <p>购物车</p>
         </div>
         <div class="car_main">
-            <div class="car_msg" v-if="products.length">
-                购物车还没有商品哦<br><br>
-                <router-link to="/">先去逛逛吧</router-link>
-            </div>
+            
             <div class="car_show">
                 <div class="car_allcheck">
                     <span class="all_check" @click="selectAll" :class="{check_click:isSelectAll}"></span>全选
                     <span class="unall_check" @click="unselectAll" v-if="isSelectAll">取消全选</span>
+                </div>
+                <div class="car_msg" v-if="products.length===0">
+                    购物车还没有商品哦<br><br>
+                    <router-link to="/">先去逛逛吧</router-link>
                 </div>
                 <div class="car_list">
                     <ul id="list_content">
                         <li v-for="(item, index) in products">
                             <span class="check" @click="selectGood(item)" :class="{check_click:item.isChecked}"></span>
                             <img src="../../assets/imgs/01.jpg" alt="">
-                            <span class="car_title">{{item.qnTitle}}</span>
-                            <span class="car_color">颜色：{{item.qnColor[0]}}</span>
-                            <span class="car_chima">尺码：{{item.qnSize[0]}}</span>
-                            <span class="car_price">{{item.qnPrimaryPrices}}</span>
+                            <span class="car_title">{{item.title}}</span>
+                            <span class="car_color">颜色：{{item.color}}</span>
+                            <span class="car_chima">尺码：{{item.size}}</span>
+                            <span class="car_price">{{item.price}}</span>
                             <div class="car_shuliang">
                                 <span class="jia iconfont icon-xiaojiantou_shang_mianxing-copy" @click="changeQuentity(item,1,index)"></span>
-                                <input type="text" class="car_count" :value="item.qnAmount" disabled>
+                                <input type="text" class="car_count" :value="item.num" disabled>
                                 <span class="jian iconfont icon-xiaojiantou_xia_mianxing-copy" @click="changeQuentity(item,-1,index)"></span>
                             </div>
                         </li>
@@ -40,7 +41,7 @@
                 <span class="total_price">{{totalPrice}}</span>
             </div>
             <div class="delete" @click="ifDelete">删除</div>
-            <div class="car_gopay">
+            <div class="car_gopay" @click="tips">
                 去结算
             </div>
         </div>
@@ -110,15 +111,12 @@
                 }
 		    },
             changeQuentity(good,val,_index){
-                if(good.qnAmount == 1 && val == -1 ){
+                if(good.num == 1 && val == -1 ){
                     alert('商品数量不能小于1')
                 } else {
-                    var qty = Number(good.qnAmount)
+                    var qty = Number(good.num)
                     qty += val;
-                    good.qnAmount = qty	
-                    // var aa = document.getElementById("list_content")
-                    // var bb = aa.getElementsByTagName("*")
-                    // console.log(bb.length)
+                    good.num = qty
                 }
 		    },
             goDelete(){
@@ -127,9 +125,13 @@
                 // 遍历商品列表删除所有选中的
                 this.products.forEach(function(item,index,_list){
                     if(item.isChecked){
+                        // console.log(_list)
                         _list.splice(index,1);
+                        this.products = _list;
+                        localStorage.buy = JSON.stringify(this.products);
+                        console.log(JSON.parse(localStorage.buy));
                     }
-                });
+                }.bind(this));
             },
             notDelete(){
                 this.askDelete = false;
@@ -145,42 +147,55 @@
                 } else {
                     this.askDelete = true;
                 }
-		    }
+		    },
+            tips(){
+                alert("我怀里所有温暖的空气，变成风也不敢和你相遇")
+            }
             
         },
-        watch:{
-            // var parent = document.getElementById("list_content")
-            // var child = parent.getElementsByTagName("*")
-            // console.log(child.length)
-        },
+        
         computed:{
-            // var parent = document.getElementById("list_content")
-            // var child = parent.getElementsByTagName("*")
-            // console.log(child.length)
             totalPrice:function(){
                 var total = 0;
                 this.products.forEach(function(good){
                     if(good.isChecked){
-                        total += good.qnPrimaryPrices * good.qnAmount;
+                        total += good.price * good.num;
                     }
                 });
-                return total;
+                return total.toFixed(2);
                 
 		    },
         },
         created:function(){
+            // jquery获取数据
             // $.post('http://localhost:888/' +  'getProduct', {}, function(response){
             //     // console.log(response.data)
             //     // var data = response.data
             //     this.products.push(response.data);
             // }.bind(this))
-            http.post('getProduct', {})
-				.then(response => {
-                    // if(response.state){
-					// 	this.products.push(response.data);
-					// }
-                    this.products=response.data;
-				})
+
+            // vue获取数据
+            // http.post('getProduct', {})
+			// 	.then(response => {
+            //         // if(response.state){
+			// 		// 	this.products.push(response.data);
+			// 		// }
+            //         this.products=response.data;
+			// 	})
+
+            // 本地存储
+            // this.products = localStorage.getItem(buy)
+            this.products = JSON.parse(localStorage.buy);
+            // console.log(products)
+                // aa.map(function(i){
+                //     if(i.title == this.buyDetails.title){
+                //         i.num =parseInt(i.num) +  parseInt(this.buyDetails.num);
+                //         return;
+                //     }else{
+                //         aa.push(this.buyDetails);
+                //     }
+                // }.bind(this))
+                
 
         }
     }
