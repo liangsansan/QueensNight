@@ -1,0 +1,3 @@
+mongoimport -d QueensNight -c products --file products.json   --导入到数据库
+
+mongoexport -d QueensNight -c products -o products.json    --导出到json
