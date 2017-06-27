@@ -1,4 +1,5 @@
-$mainColor:#f68bb7;
+// $mainColor:#f68bb7;
+@import '../../assets/common/global.scss';
 $fontColor:#333;
 $iconColor:#c9cabb;
 
@@ -28,7 +29,7 @@ $font_size:75;
             top: 0;
             z-index:10;
             i.icon{
-                font-size: rem(38);    
+                font-size: 0.4375rem;    
             }
         }
         span{
