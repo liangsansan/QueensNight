@@ -117,22 +117,22 @@
 				toTopShow:'',
 				imgUrl:base.lyimgUrl,
 				bannerImg:[
-					"series1.jpg",
-					"series2.jpg",
-					"series3.jpg",
+					"select1.jpg",
+					"select2.jpg",
+					"select3.jpg",
 				],
 				sortImg:[
 					
 				],
 				imgList:[
-					"series1.jpg",
-					"series2.jpg",
-					"series3.jpg",
-					"series4.jpg",
-					"series5.jpg",
-					"series6.jpg",
-					"series7.jpg",
-					"series8.jpg",
+					"select1.jpg",
+					"select2.jpg",
+					"select3.jpg",
+					"select4.jpg",
+					"select5.jpg",
+					"select6.jpg",
+					"select7.jpg",
+					"select8.jpg",
 				]
 			}
 		},
@@ -152,7 +152,7 @@
 		        this.scroll = $('.scroll_container').scrollTop()
 		       	if(this.scroll>400){
 		       		 this.toTopShow=true;
-						// console.log(this)	
+						// console.log(this.$parent)
 					this.$parent.getTopShow(this.toTopShow)
 		       	}
 		       	 if(this.scroll<400){
@@ -160,12 +160,13 @@
 					this.$parent.getTopShow(this.toTopShow)
 		       	}
 		       	// console.log(this.$parent)
-	      	}
+	      	},
 	  
 		},
 		created(){
-			// 进入首页获取商品
-			// this.$store.dispatch('homeInfo',{home:'home'})
+				// getGoods(){
+
+				// }
 
 			// login(event){
 			// 	if($('form').valid()){
@@ -185,7 +186,7 @@
 						preventClicks : true,//默认true
 						// 这样，即使我们滑动之后， 定时器也不会被清除
 		　				autoplayDisableOnInteraction : false,
-				})
+					})
 		}
 	}
 </script>

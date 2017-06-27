@@ -165,7 +165,7 @@ resetpsw : function(_collection, data,key,callback){
                 if(error){
                     console.log(error)	
                 } else {
-                    collection.remove(data,function(err,resulr){
+                    collection.remove(data,function(err,result){
                         console.log(result)
                     });
                 }

@@ -84,6 +84,7 @@
 				let info={username:a,password:b};
 				console.log(this.username,this.password);
 				$.post('http://localhost:888/' +  'login', info, function(response){
+					console.log(response)
 					if(response.status ==false){
 						$.alert(response.message)
 					}else if(response.status ==true){
