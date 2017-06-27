@@ -52,7 +52,7 @@ import base from'../wenxiong/base.js'
  		 	}
 		},																				
 		created(){
-			$.get('./src/components/dzy_details/shop.json',function(res){
+			$.post('http://localhost:888/getProduct',[],function(res){
 				var aa = [];
 				for(var i = 0;i<=res.length-1;i++){
 					if(res[i].qnClassify == this.classify){

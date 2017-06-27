@@ -105,5 +105,32 @@ module.exports = {
                 db.close();
             })
         })	
-    }
+    },
+
+    //查询数据库中的所有数据
+    exists:function(_collection, data, arr, callback){
+            db.open(function(error, db){
+                var obj = {};
+                // arr.forEach(function (ele) {
+                // 	//obj = data
+                // 	obj[ele] = data[ele]? data[ele] : '';
+        //       });
+
+                db.collection(_collection, function(error, collection){
+                    if(error){
+                        
+                        console.log(error)
+                    } else {
+
+                        collection.find().toArray(function(err, docs){
+                            //docs就是所有的数据,并且是一个数组,obj = {}.
+                            console.log(1);
+                            callback(docs);
+                        });
+                    }
+                     db.close();
+                });
+            })
+    },
+
 }

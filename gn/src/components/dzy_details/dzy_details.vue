@@ -20,9 +20,9 @@
                         <div class="swiper-slide "><router-link to="/wenxiong" class="d_t_text wenxiong" @click.native="checkColor" name="wenxiong">文胸</router-link></div>
                         <div class="swiper-slide "><router-link to="/maoyi" class="d_t_text maoyi" @click.native="checkColor" name="maoyi">毛衣</router-link></div>
                         <div class="swiper-slide "><router-link to="/yongyi" class="d_t_text yongyi" @click.native="checkColor" name="yongyi">泳衣</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text neiku" @click.native="checkColor" name="neiku">内裤</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text siwa" @click.native="checkColor" name="siwa">丝袜</router-link></div>
-                        <div class="swiper-slide "><router-link to="#" class="d_t_text zhekou" @click.native="checkColor" name="zhekou">折扣</router-link></div> 
+                        <div class="swiper-slide "><router-link to="/neiku" class="d_t_text neiku" @click.native="checkColor" name="neiku">内裤</router-link></div>
+                        <div class="swiper-slide "><router-link to="/siwa" class="d_t_text siwa" @click.native="checkColor" name="siwa">丝袜</router-link></div>
+                        <div class="swiper-slide "><router-link to="/zhekou" class="d_t_text zhekou" @click.native="checkColor" name="zhekou">折扣</router-link></div> 
                     </div>
                 </div>
             </div>

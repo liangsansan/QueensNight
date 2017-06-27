@@ -8,6 +8,9 @@ import Details from '../components/list/list.vue'
 import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
 import Maoyi from '../components/dzy_details/maoyi/maoyi.vue'
 import Yongyi from '../components/dzy_details/yongyi/yongyi.vue'
+import Neiku from '../components/dzy_details/Neiku/neiku.vue'
+import Siwa from '../components/dzy_details/siwa/siwa.vue'
+import Zhekou from  '../components/dzy_details/zhekou/zhekou.vue'
 // 登录注册
 import LoginComponent from '../components/login/login.vue'
 import RegisterComponent from '../components/register/register.vue'
@@ -55,6 +58,18 @@ const router = new VueRouter({
 			path:'/yongyi',
 			name:'yongyi',
 			component:Yongyi
+		},{
+			path:'/neiku',
+			name:'neiku',
+			component:Neiku
+		},{
+			path:'/siwa',
+			name:'siwa',
+			component:Siwa
+		},{
+			path:'/zhekou',
+			name:'zhekou',
+			component:Zhekou
 		}]
 	},{
 		path:'myWallet',

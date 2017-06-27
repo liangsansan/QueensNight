@@ -64,4 +64,11 @@ exports.Register = function(app){
 		})
 	});
 
+    app.post('/getProduct',urlencodedParser,function(request, response){
+        console.log(request.body);
+		DB.exists('products',{},[],function(result){
+			response.send(result);
+		});
+ 	 });
+
 }
