@@ -5,8 +5,8 @@
                 <router-link to="/"><i class="iconfont icon-fanhui"></i></router-link>
                 <div class="d_s_i_box">
                     <div class="d_s_i_b1">
-                        <input type="text" placeholder="搜索一下" class="d_s_input"/>
-                         <i class="iconfont icon-sousuo-sousuo"></i>
+                        <input type="text" placeholder="搜索一下" class="d_s_input" v-model="inputV"/>
+                         <router-link  :to="{path:'/search',query: {keyword:inputV}}"><i class="iconfont icon-sousuo-sousuo" ></i></router-link>
                     </div>
                 </div>
                 <i class="iconfont icon-xiao46" @click="dis(dis1)"></i>
@@ -70,6 +70,7 @@ import $ from 'jquery'
                 priceMax:false,
                 priceMin:true,
                 dis1:false,
+                inputV:'',
 			}
 		},
         beforeUpdate(){

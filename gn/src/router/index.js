@@ -4,6 +4,7 @@ import http from '../utils/HttpClient'
 
 import HomeComponent from '../components/home/home.vue'
 import List from '../components/dzy_details/dzy_details.vue'
+import Details from '../components/list/list.vue'
 import Wenxiong from '../components/dzy_details/wenxiong/wenxiong.vue'
 import Maoyi from '../components/dzy_details/maoyi/maoyi.vue'
 import Yongyi from '../components/dzy_details/yongyi/yongyi.vue'
@@ -59,7 +60,12 @@ const router = new VueRouter({
 		path:'myWallet',
 		name:'myWallet',
 		// component:WalletComponent
-	}]
+	},{
+		path:'/details',
+		name:'/details',
+		component:Details
+	}
+	]
 })
 
 // 对将要进入的路由进行权判断

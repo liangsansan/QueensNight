@@ -1,18 +1,20 @@
 <template>
     <div class="wenxiong_main">
-		<router-link to="#">
-            <div class="w_m_box" v-for=" item in max(res)" v-if="classify==item.qnClassify">
-                <div class="w_m_img_box" >
-                    <!--
-                        请将ajax数据放在data里面！！！
-                    -->
-                    <img :src= "src1 + item.qnDetailsImg[0]"  class="w_m_img"/>
-                    <p class="w_m_p">{{item.qnTitle}}</p>
-                    
-                    <div class="w_m_p_box"><span class="w_m_maxPri">${{item.qnDiscountPrices}}</span><span class="w_m_minPri">${{item.qnPrimaryPrices}}</span><span class="w_m_homeclass">{{item.qnHomeClass}}!</span></div>
-                </div>
+		
+            <div class="w_m_box" v-for=" (item,index) in max(res)">
+				<router-link :to="{path:'/details',query: {name:res[index]}}">
+					<div class="w_m_img_box" >
+						<!--
+							请将ajax数据放在data里面！！！
+						-->
+						<img :src= "src1 + item.qnDetailsImg[0]"  class="w_m_img"/>
+						<p class="w_m_p">{{item.qnTitle}}</p>
+						
+						<div class="w_m_p_box"><span class="w_m_maxPri">${{item.qnDiscountPrices}}</span><span class="w_m_minPri">${{item.qnPrimaryPrices}}</span><span class="w_m_homeclass">{{item.qnHomeClass}}!</span></div>
+					</div>
+				</router-link>
 		    </div>
-        </router-link>
+       
 	</div>
 </template>
 
