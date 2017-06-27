@@ -116,7 +116,9 @@
                 } else {
                     var qty = Number(good.num)
                     qty += val;
-                    good.num = qty.toFixed(2)	
+
+                    good.num = qty
+
                 }
 		    },
             goDelete(){
@@ -125,12 +127,15 @@
                 // 遍历商品列表删除所有选中的
                 this.products.forEach(function(item,index,_list){
                     if(item.isChecked){
+                        // console.log(_list)
                         _list.splice(index,1);
-                        products = _list;
-                        localStorage.buy = JSON.stringify(products);
+
+                        this.products = _list;
+                        localStorage.buy = JSON.stringify(this.products);
+
                         console.log(JSON.parse(localStorage.buy));
                     }
-                });
+                }.bind(this));
             },
             notDelete(){
                 this.askDelete = false;
@@ -184,7 +189,9 @@
 
             // 本地存储
             // this.products = localStorage.getItem(buy)
-            var products = JSON.parse(localStorage.buy);
+
+            this.products = JSON.parse(localStorage.buy);
+            // console.log(products)
                 // aa.map(function(i){
                 //     if(i.title == this.buyDetails.title){
                 //         i.num =parseInt(i.num) +  parseInt(this.buyDetails.num);
