@@ -92,13 +92,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    
                     <div class="col-sm-1">
                         <span class="col-sm-12 control-label">适合场合</span>
                     </div>
                     <div class="col-sm-2">
                         <div class="dk-form-element">
                             <input id="occasion" type="text" v-model="dataform.qnOccasion" class="form-control required">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">商品厚度</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="occasion" type="text" v-model="dataform.qnPly" class="form-control required">
                         </div>
                     </div>
                     <div class="col-sm-1">
@@ -109,6 +116,24 @@
                             <select id="homeClass" v-model="dataform.qnDetailsType" class="form-control required">
                                 <option v-for="obj in dataDetailsType">{{obj}}</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">罩杯杯型</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="occasion" type="text" v-model="dataform.qnCharacteristic" class="form-control required">
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <span class="col-sm-12 control-label">罩杯面料</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="dk-form-element">
+                            <input id="occasion" type="text" v-model="dataform.qnLining" class="form-control required">
                         </div>
                     </div>
                 </div>
@@ -131,7 +156,14 @@
                         <span>{{size}}</span>
                     </label>
                 </div>
-
+                <h4>首页列表图上传</h4>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <div class="dk-form-element">
+                            <input type="file" name="qnHomeList" />
+                        </div>
+                    </div>
+                    </div>
 
                 <h4>商品轮播图上传</h4>
                 <div class="form-group">
