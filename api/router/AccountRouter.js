@@ -80,6 +80,7 @@ exports.Register = function(app){
     app.post('/getProduct',urlencodedParser,function(request,response){
         response.setHeader("Access-Control-Allow-Origin","*");
         DB.get('products',{},function(result){
+        
             response.send(result)
             
         })
@@ -110,4 +111,23 @@ exports.Register = function(app){
             }
         }) 
     });
+    //删除数据
+    app.post('/dels',urlencodedParser,function(req,res){
+		res.setHeader('Access-Control-Allow-Origin','*');
+        DB.get('products',{},function(result){
+            console.log(result)
+            result.forEach(function(item){
+                if(item._id == req.body._id){
+                    console.log(item._id,req.body._id)
+                    DB.del('products', item, function(data){
+                        if(data.length){
+                            res.send(ApiResult(true,'删除成功',data));
+                        }else{
+                            res.send(ApiResult(false,'删除失败'));
+                        }
+                    });
+                }
+            })
+        })       
+	});
 }

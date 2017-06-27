@@ -6,7 +6,6 @@ var db = new MongoDB.Db('QueensNight', MongoDBServer);
 
 module.exports = {
     get: function(_collection, _condition, _callback){
-        console.log(_condition);
         db.open(function(dberror){
             if(dberror){
                 _callback(ApiResult(false, null, dberror));
@@ -17,12 +16,10 @@ module.exports = {
                     _callback(ApiResult(false, null, collerror));
                     return;
                 }
-                collection.find().toArray(function(resulterror, dataset){
-                    if(resulterror){
-                        _callback(ApiResult(false, null, resulterror));    
-                    } else {
-                        _callback(ApiResult(true, null, dataset));
-                    }
+                collection.find(_condition).toArray(function(resulterror, dataset){
+                    console.log(dataset)
+                    
+                    _callback(dataset)
                 })
             })
             db.close();
@@ -59,10 +56,8 @@ module.exports = {
                 console.log('connect db:', error);
 		    }
             //_collection=>cake => 集合名（表名）
-            console.log('data',data)
             db.collection(_collection, function(error, collection){
                 if(error){
-                    console.log(error)	
                 } else {
                     var obj = {};
                     obj[key] = data[key];
@@ -86,7 +81,6 @@ module.exports = {
                 console.log('connect db:', error);
 		    }
             //_collection=>cake => 集合名（表名）
-            console.log('data',data)
             db.collection(_collection, function(error, collection){
                 if(error){
                     console.log(error)	
@@ -117,7 +111,7 @@ module.exports = {
                 var title_obj = {};
                 title_obj[key] = data[key];
                 collection.find(title_obj).toArray(function(error,docs){
-                    console.log(docs.length);
+                    // console.log(docs.length);
                     if(docs.length >=1){
                         callback();
                         db.close();
@@ -125,7 +119,6 @@ module.exports = {
                         var obj = {};
                         for(var key in data){
                             obj[key] = data[key];
-                            console.log(obj)
                         }
                         collection.insert(obj);
                         callback(data);
@@ -135,5 +128,24 @@ module.exports = {
             })
         })
 
+    },
+    //删除商品
+    del:function(_collection,data,callback){
+        db.open(function(error, db){
+            if(error){
+                console.log('connect db:', error);
+            }
+            //Account => 集合名（表名）
+            db.collection(_collection, function(error, collection){
+                if(error){
+                    console.log(error)	
+                } else {
+                    collection.remove(data,function(err,resulr){
+                        console.log(result)
+                    });
+                }
+                db.close();
+            })
+        })	
     }
 }
