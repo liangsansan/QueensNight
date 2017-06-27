@@ -5,7 +5,7 @@ import $ from 'jquery'
 
 // import jsonp from 'superagent-jsonp';
 
-const LOCAL_SERVER = 'http://localhost:888/';
+const LOCAL_SERVER = 'http://10.3.133.25:888/';
 
 const DEV_SERVER = '';
 const PRO_SERVER = '';
