@@ -7,12 +7,12 @@ img[lazy=loading] {
     /*your style here*/
     display: block;
     margin: 0 auto;
-    width: 100px !important;
+    width: 1.5625rem !important;
   }
 img[lazy=error] {
      display: block;
     margin: 0 auto;
-    width: 100px !important;
+    width: 1.5625rem !important;
     /*your style here*/
   }
 img[lazy=loaded] {
@@ -29,8 +29,8 @@ img[lazy=loaded] {
         // height: 80px; 
         width: 100%;
         .home_logo{
-            height: 40px;
-            line-height: 40px;
+            height: 0.625rem;
+            line-height: 0.625rem;
             width: 100%;
             background-image: url('../../assets/ly-use/logo.png');
             background-size: cover;
@@ -38,25 +38,25 @@ img[lazy=loaded] {
             span{
                 display:block;
                 float: right;
-                margin-right: 15px;
+                margin-right: 0.2344rem;
                 color: red;
-                font-size: 14px;
+                font-size: 0.2188rem;
             }
         }
         .home_search{
-            height: 40px;
+            height: 0.625rem;
             background-color:$mainColorw;
             overflow: hidden;
             label{
                 span{
                     display:block;
                     float: left;
-                    width: 80px;
-                    height: 30px;
-                    line-height: 30px;
-                    margin-top: 5px;
-                    padding:0 15px;
-                    font-size: 16px;
+                    width: 1.25rem;
+                    height: 0.4688rem;
+                    line-height: 0.4688rem;
+                    margin-top: 0.0781rem;
+                    padding:0 0.2344rem;
+                    font-size: 0.25rem;
                     color:$mainColorr;
                     
 
@@ -64,20 +64,20 @@ img[lazy=loaded] {
                 input{
                     display:block;
                     float: left;
-                    height: 30px;
-                    width: 200px;
-                    padding-left: 10px;
-                    margin-top: 5px;
-                    border-radius: 10px;
-                    border: 2px solid $mainColor;
+                    height: 0.4688rem;
+                    width: 3.125rem;
+                    padding-left: 0.1563rem;
+                    margin-top: 0.0781rem;
+                    border-radius: 0.1563rem;
+                    border: 0.0313rem solid $mainColor;
                     // color:$mainColorr;
                 }
                 i{
                     display:block;
                     float: right;
                     color: $mainColorr;
-                    font-size: 24px;
-                    margin:5px 0 0 5px;
+                    font-size: 0.375rem;
+                    margin:0.0781rem 0 0 0.0781rem;
                     opacity: 0.5;
                 }
             }
@@ -101,12 +101,12 @@ img[lazy=loaded] {
                 li{
                     float: left;
                     width: 25%;
-                    padding: 10px;
+                    padding: 0.1563rem;
                     img{
                         width:100%;
                     }
                     p{
-                        margin-top: 5px;
+                        margin-top: 0.0781rem;
                         // color: $mainColorw;
                     }
                 }
@@ -114,9 +114,9 @@ img[lazy=loaded] {
         }
         .home_select{
             p{
-                line-height: 30px;
+                line-height: 0.4688rem;
                 text-align: center;
-                font-size: 16px;
+                font-size: 0.25rem;
                 background-color: $mainColorr;
                 color: $mainColorw;
                 opacity: 0.4;
@@ -124,7 +124,7 @@ img[lazy=loaded] {
             ul{
                 li{
                     // height: 40px;
-                    padding: 5px;
+                    padding: 0.0781rem;
                     img{
                         width: 100%;
                         height: 100%;
@@ -145,7 +145,7 @@ img[lazy=loaded] {
                         overflow: hidden;
                         li{
                             width: 50%;
-                            padding: 5px;
+                            padding: 0.0781rem;
                             float: left;
                             img{
                                 width: 100%;
@@ -167,7 +167,7 @@ img[lazy=loaded] {
                     .left_img{
                         float: left;
                         width: 50%;
-                        padding: 5px;
+                        padding: 0.0781rem;
                         img{
                             width: 100%;
                         }
@@ -176,7 +176,7 @@ img[lazy=loaded] {
                         width: 50%;
                         float: right;
                         li{
-                            padding: 5px;
+                            padding: 0.0781rem;
                             img{
                                 width:100%;
                             }
@@ -195,7 +195,7 @@ img[lazy=loaded] {
                         overflow: hidden;
                         li{
                             width: 50%;
-                            padding: 5px;
+                            padding: 0.0781rem;
                             float: left;
                             img{
                                 width: 100%;
@@ -213,7 +213,7 @@ img[lazy=loaded] {
                 }
                 .details_img{
                     .details_mainImg{
-                        padding: 5px;
+                        padding: 0.0781rem;
                         img{
                             width: 100%;
                         }
@@ -222,7 +222,7 @@ img[lazy=loaded] {
                         li{
                             width: 50%;
                             float: left;
-                            padding: 5px;
+                            padding: 0.0781rem;
                             img{
                                 width: 100%;
                             }
@@ -242,7 +242,7 @@ img[lazy=loaded] {
                         overflow: hidden;
                         li{
                             width: 50%;
-                            padding: 5px;
+                            padding: 0.0781rem;
                             float: left;
                             img{
                                 width: 100%;
@@ -262,7 +262,7 @@ img[lazy=loaded] {
                         overflow: hidden;
                         li{
                             width: 50%;
-                            padding: 5px;
+                            padding: 0.0781rem;
                             float: left;
                             img{
                                 width: 100%;
@@ -275,23 +275,23 @@ img[lazy=loaded] {
         .home_more{
             // background-color: $mainColorr;
             opacity: 0.5;
-            height: 30px;
-            line-height: 30px;
+            height: 0.4688rem;
+            line-height: 0.4688rem;
             color: $mainColorr;
             text-align: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-top: 0.1563rem;
+            margin-bottom: 0.1563rem;
+            font-size: 0.2188rem;
             font-style: italic;
             .more_left{
                 display: block;
                 float: left;
-                margin-left: 10px;
+                margin-left: 0.1563rem;
             }
             .more_right{
                 display: block;
                 float: right;
-                margin-right: 10px;
+                margin-right: 0.1563rem;
             }
         }
     }

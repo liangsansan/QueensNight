@@ -5,7 +5,7 @@
 				<span>全场满199包邮</span>
 			</div>
 			<div class="home_search">
-				<label for=""><span>搜全场</span><input type="text" placeholder="输入宝贝关键词" @keyup.enter="search" @click="$router.push({name:'details'})" ><i class="iconfont icon-sousuo-sousuo" @click="search" ></i></label>
+				<label for=""><span>搜全场</span><input type="text" placeholder="输入关键词" @keyup.enter="search"><i class="iconfont icon-sousuo-sousuo" @click="search" ></i></label>
 			</div>
 		</div>
 		<div class="home_body  scroll_container " @scroll="Scroll" >
@@ -34,10 +34,10 @@
 			</div>
 			<div class="home_class">
 				<ul>
-					<li  @click="$router.push({name:'details',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
-					<li  @click="$router.push({name:'details',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
-					<li  @click="$router.push({name:'details',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
-					<li  @click="$router.push({name:'details',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
+					<li  @click="$router.push({name:'list',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
+					<li  @click="$router.push({name:'list',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
+					<li  @click="$router.push({name:'list',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
+					<li  @click="$router.push({name:'list',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
 				</ul>
 			</div>
 			<div class="home_select">
@@ -45,7 +45,7 @@
 				<ul>
 					<li v-for='item in imgList'>
 						
-						<img v-lazy='imgUrl+item.imgurl' @click="$router.push({name:'details',query:{series:item.keyword}})">
+						<img v-lazy='imgUrl+item.imgurl' @click="$router.push({name:'search',query:{keyword:item.keyword}})">
 					</li>
 				</ul>
 			</div>
@@ -137,7 +137,7 @@
 					</div>
 				</div>			
 			</div>
-			<div class="home_more"><span class="more_left">- - - - - -</span> 更多宝贝等你去发现<span class="more_right"> - - - - - -</span> </div>
+			<div class="home_more"><span class="more_left">- - - - - -</span> 更多宝贝等你来发现<span class="more_right"> - - - - - -</span> </div>
 		</div>
 	</div>
 </template>
@@ -184,48 +184,45 @@
 					{'imgurl' :"series8.jpg",keyword:'性感情趣'}	
 				],
 				sexyImg:[
-					{'imgurl' :"sexy1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"sexy2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sexy3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sexy4.jpg",keyword:'大杯稳固'}		
+					{'imgurl' :"sexy1.jpg",keyword:'homesexy1'},
+					{'imgurl' :"sexy2.jpg",keyword:'homesexy2'},
+					{'imgurl' :"sexy3.jpg",keyword:'homesexy3'},
+					{'imgurl' :"sexy4.jpg",keyword:'homesexy4'}		
 				],
 				cupImg:[
-					{'imgurl' :"cup1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"cup2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"cup3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"cup4.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"cup5.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"cup6.jpg",keyword:'大杯稳固'},
+					{'imgurl' :"cup1.jpg",keyword:'homecup1'},
+					{'imgurl' :"cup2.jpg",keyword:'homecup2'},
+					{'imgurl' :"cup3.jpg",keyword:'homecup3'},
+					{'imgurl' :"cup4.jpg",keyword:'homecup4'},
+					{'imgurl' :"cup5.jpg",keyword:'homecup5'},
+					{'imgurl' :"cup6.jpg",keyword:'homecup6'},
 					
 				],
 				skirtImg:[
-					{'imgurl' :"sweet1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"sweet2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet4.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet5.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet6.jpg",keyword:'大杯稳固'},
-					
+					{'imgurl' :"skirt1.jpg",keyword:'homeskirt1'},
+					{'imgurl' :"skirt2.jpg",keyword:'homeskirt2'},
+					{'imgurl' :"skirt3.jpg",keyword:'homeskirt3'},
+					{'imgurl' :"skirt4.jpg",keyword:'homeskirt4'}
 				],
 				girlImg:[
-					{'imgurl' :"girl1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"girl2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"girl3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"girl4.jpg",keyword:'大杯稳固'}	
+					{'imgurl' :"girl1.jpg",keyword:'homegirl1'},
+					{'imgurl' :"girl2.jpg",keyword:'homegirl2'},
+					{'imgurl' :"girl3.jpg",keyword:'homegirl3'},
+					{'imgurl' :"girl4.jpg",keyword:'homegirl4'}	
 				],
 				sweetImg:[
-					{'imgurl' :"sweet1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"sweet2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet4.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet5.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"sweet6.jpg",keyword:'大杯稳固'},
+					{'imgurl' :"sweet1.jpg",keyword:'homesweet1'},
+					{'imgurl' :"sweet2.jpg",keyword:'homesweet2'},
+					{'imgurl' :"sweet3.jpg",keyword:'homesweet3'},
+					{'imgurl' :"sweet4.jpg",keyword:'homesweet4'},
+					{'imgurl' :"sweet5.jpg",keyword:'homesweet5'},
+					{'imgurl' :"sweet6.jpg",keyword:'homesweet6'},
 				],
 				topImg:[
-					{'imgurl' :"top1.jpg",keyword:'升杯聚拢'},
-					{'imgurl' :"top2.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"top3.jpg",keyword:'大杯稳固'},
-					{'imgurl' :"top4.jpg",keyword:'大杯稳固'}
+					{'imgurl' :"top1.jpg",keyword:'hometop1'},
+					{'imgurl' :"top2.jpg",keyword:'hometop2'},
+					{'imgurl' :"top3.jpg",keyword:'hometop3'},
+					{'imgurl' :"top4.jpg",keyword:'hometop4'}
 				]
 
 			}
@@ -237,9 +234,9 @@
 				// console.log(keyword)
 				if(!keyword){
 					$.alert('请输入你想要找的宝贝！')
+				}else{
+					this.$router.push({name:'search',query:{keyword:keyword}})
 				}
-				// 发送Ajax请求
-				// this.$store.dispatch('search', {keyword:keyword})
 			},
 			// 滚动事件
 			 Scroll() {
@@ -285,6 +282,10 @@
 						// 这样，即使我们滑动之后， 定时器也不会被清除
 		　				autoplayDisableOnInteraction : false,
 				})
+		},
+		beforeDestroy(){
+			this.$parent.getTopShow(false)
+			$('.scroll_container').scrollTop(0)
 		}
 	}
 </script>

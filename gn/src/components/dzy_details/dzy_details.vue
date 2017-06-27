@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="details_main_main">
+            <div class="details_main_main ">
                 <router-view ></router-view>
             </div>
         </div>
@@ -133,10 +133,7 @@ import $ from 'jquery'
             }
             
 		},
-		updated(){
-            
-            
-		}
+        
 	}
    
 </script>

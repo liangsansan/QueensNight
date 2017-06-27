@@ -13,7 +13,8 @@ import RegisterComponent from '../components/register/register.vue'
 //我的..
 import MineComponent from '../components/mine/mine.vue'
 import WalletComponent from '../components/myWallet/myWallet.vue'
-
+// 搜索
+import SearchComponent from '../components/search/search.vue'
 
 Vue.use(VueRouter)
 
@@ -26,17 +27,21 @@ const router = new VueRouter({
 		component: HomeComponent,
 		children: []
 	},{
+		path:'/search',
+		name:'search',
+		component:SearchComponent
+	},{
 		path: '/login',
 		name: 'login',
-		// component: LoginComponent
+		component: LoginComponent
 	},{
 		path:'/register',
 		name:'register',
-		// component:RegisterComponent
+		component:RegisterComponent
 	},{
 		path:'/mine',
 		name:'mine',
-		// component:MineComponent,
+		component:MineComponent,
 		children:[]
 	},{
 		path:'/list',
@@ -58,7 +63,7 @@ const router = new VueRouter({
 	},{
 		path:'myWallet',
 		name:'myWallet',
-		// component:WalletComponent
+		component:WalletComponent
 	}]
 })
 

@@ -1,12 +1,11 @@
 <template>
 	<div id="foot">
-		<transition name="toTop"><div class="toTop"><i class="iconfont icon-fanhuidingbu1" @click='backtop' v-show="show"></i></div></transition>
+		<transition name="toTop"><div class="toTop" v-show="show"><i class="iconfont icon-fanhuidingbu1" @click='backtop'></i></div></transition>
 		<ul class="foot">
-			<li><router-link :to="{name:'home'}" exact><i class="iconfont icon-home"></i><span>首页</span></router-link></li>
-			<li><router-link :to="{name:'wenxiong'}"><i class="iconfont icon-xiao46"></i><span>商品分类</span></router-link></li>
-			<li><router-link :to="{name:'register'}"><i class="iconfont icon-konggouwuche"></i><span>购物车</span></router-link></li>
-			<li><router-link :to="{name:'mine'}"><i class="iconfont icon-gerenzhongxin"></i><span>用户中心</span></router-link></li>
-
+			<router-link :to="{name:'home'}" exact><li><i class="iconfont icon-home"></i><span>首页</span></li></router-link>
+			<router-link :to="{name:'list'}"><li><i class="iconfont icon-xiao46"></i><span>商品分类</span></li></router-link>
+			<router-link :to="{name:'register'}"><li><i class="iconfont icon-konggouwuche"></i><span>购物车</span></li></router-link>
+			<router-link :to="{name:'mine'}"><li><i class="iconfont icon-gerenzhongxin"></i><span>用户中心</span></li></router-link>
 		</ul>
 	</div>
 </template>
@@ -35,15 +34,11 @@
 	      		$('.scroll_container').animate({scrollTop:0},300)
 			},
 			getTopShow(isshow){
-					// console.log(ishow)
+					// console.log(isshow)
 					this.show=isshow;
-			}
-		},
-		created(){
-		},
-		beforeUpdate(){
+
+			},
 			
 		}
-		
 	}
 </script>
