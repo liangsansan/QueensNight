@@ -25,7 +25,7 @@
             </div>
             <ul class="search_list">
                 <li v-for="(item,index) in this.data ">
-                  <img v-lazy='baseUrl+item.qnHomeList[0]' @click="$router.push({name:'details',query:{name:item}})"></router-link> 
+                  <img v-lazy='baseUrl+item.qnDetailsImg[0]' @click="$router.push({name:'details',query:{name:item}})"> 
                 </li>
                 <!--<li><img src="../../assets/ly-use/details/cup1.jpg"> </li>
                 <li><img src="../../assets/ly-use/details/cup1.jpg"> </li>
@@ -88,7 +88,7 @@
             // 判断是否有关键字
             let keyword=this.$route.query.keyword
             if(keyword){
-               http.post('getProdut',{keyword:keyword}).then(response=>{
+               http.post('search',{keyword:keyword}).then(response=>{
                     this.data=response.data;
                    console.log(response.data)
 

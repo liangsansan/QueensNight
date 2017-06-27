@@ -37,10 +37,10 @@
 			<div class="home_class">
 				<ul>
 
-					<li  @click="$router.push({name:'list',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
+					<li  @click="$router.push({name:'search',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
+					<li  @click="$router.push({name:'search',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
+					<li  @click="$router.push({name:'search',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
+					<li  @click="$router.push({name:'search',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
 
 				</ul>
 			</div>
@@ -49,48 +49,13 @@
 				<ul>
 
 					<li v-for='item in imgList'>
-						
+						<img v-lazy='imgUrl+item.imgurl' @click="$router.push({name:'search',query:{keyword:item.keyword}})">
 
 					</li>
 				</ul>
 			</div>
 			<div class="home_goodsCategory">
-				<div class="category_one">
-					<div class="category_img"><img src="../../assets/ly-use/cup.jpg" alt=""></div>
-					<div class="details_img">
-						<div class="left_img"><img src="../../assets/ly-use/details/left.jpg" alt=""></div>
-						<div class="right_img">
-							<ul>
-								<li><img src="../../assets/ly-use/details/right3.jpg" alt=""></li>
-								<li><img src="../../assets/ly-use/details/right2.jpg" alt=""></li>
-								<li><img src="../../assets/ly-use/details/right3.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="category_two">
-					<div class="category_img"><img src="../../assets/ly-use/girl.jpg" alt=""></div>
-					<div class="details_img">
-						<div class="details_mainImg"><img src="../../assets/ly-use/details/xia.jpg" alt=""></div>
-						<ul>
-							<li><img src="../../assets/ly-use/details/right1.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right1.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right1.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right1.jpg" alt=""></li>
-						</ul>
-					</div>
-				</div>
-				<div class="category_three">
-					<div class="category_img"><img src="../../assets/ly-use/sexy.jpg" alt=""></div>
-					<div class="details_img">
-						<ul>
-							<li><img src="../../assets/ly-use/details/right2.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right3.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right2.jpg" alt=""></li>
-							<li><img src="../../assets/ly-use/details/right3.jpg" alt=""></li>	
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 
 			<div class="home_more"><span class="more_left">- - - - - -</span> 更多宝贝等你来发现<span class="more_right"> - - - - - -</span> </div>
