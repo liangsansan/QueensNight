@@ -28,6 +28,10 @@ import AddComponent from '../components/address/add/add.vue'
 import changePswComponent from '../components/changePsw/changePsw.vue'
 
 
+// 搜索
+import SearchComponent from '../components/search/search.vue'
+
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -39,10 +43,16 @@ const router = new VueRouter({
 		component: HomeComponent,
 		children: []
 	},{
+
 		path: '/car',
 		name: 'car',
 		component: CarComponent
 	
+		},{
+		path:'/search',
+		name:'search',
+		component:SearchComponent
+
 	},{
 		path: '/login',
 		name: 'login',
@@ -107,6 +117,7 @@ const router = new VueRouter({
 		name:'details',
 		component:Details
 	}]	
+
 })
 
 // 对将要进入的路由进行权判断

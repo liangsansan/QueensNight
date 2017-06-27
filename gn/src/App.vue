@@ -6,7 +6,6 @@
     <div id="foot">
       <foot ref="foot"></foot>
     </div>
-    
     <spinner v-show="false"></spinner>
   </div>
 </template>
@@ -33,9 +32,15 @@
     methods:{
         getTopShow(isshow){
           // console.log(this.$children)
+          // console.log(isshow)
          this.$refs.foot.getTopShow(isshow)
+         
         }
     // console.log(this)
+  },
+    updated(){
+      // this.getTopShow(false)
+      // console.log(this)
     }
   }
 </script>
