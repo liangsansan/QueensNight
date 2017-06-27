@@ -102,27 +102,40 @@ resetpsw : function(_collection, data,key,callback){
 
      //关键字搜索
     getProductsBykeyword:function(_collection, data, key, callback){
+<<<<<<< HEAD
         db.open(function(error, db){
             if(error){
                 console.log('connect db:', error);
 		    }
             //_collection=>cake => 集合名（表名）
+=======
+          
+        db.open(function(error, db){
+            if(error){
+                console.log('connect db:', error);
+            }
+            //Account => 集合名（表名）
+>>>>>>> ly
             db.collection(_collection, function(error, collection){
                 if(error){
-                    console.log(error)	
+                    console.log(error)  
                 } else {
-                    var obj = {};
-                    obj[key] = data[key];
-                    collection.find(obj).toArray(function(err, docs){
-                        if (docs.length>=1) {
-                            callback(docs);
-                        }else{
-                            callback();
-                        }
-                    })
+                       
+                    collection.find().toArray(function(err, docs){
+                        var findarr=[];
+                        docs.forEach(function(item){
+                             var str=data[key] 
+                                if(((item.qnTitle).indexOf(str)>-1 )||((item.qnOccasion).indexOf(str)>-1)){
+                                    findarr.push(item);
+                                }
+                            
+                        })
+                        callback(findarr);
+                    });
                 }
                 db.close();
             })
+<<<<<<< HEAD
         })
     },
 
@@ -172,5 +185,10 @@ resetpsw : function(_collection, data,key,callback){
                 db.close();
             })
         })	
+=======
+        })  
+
+>>>>>>> ly
     }
+
 }

@@ -5,7 +5,7 @@ import Vue from 'vue'
 import router from '../../router/index'
 
 const state = {
-    
+    data:''
 }
 
 const mutations = {
@@ -26,6 +26,7 @@ const mutations = {
 			http.get('search', formData)
 			.then(response => {
 				this.state.data=response;
+				state.data=response.data;
 				router.push({name: 'list',params:{formData}})
 			})
 
