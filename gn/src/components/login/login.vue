@@ -57,7 +57,8 @@
 	import { mapGetters, mapActions } from 'vuex'
 	import $ from 'jquery'
 	import router from '../../router/index.js'
-
+	import http from '../../utils/HttpClient.js'
+	
 	export default {
 		components:{
 
@@ -81,8 +82,8 @@
 			hblogin(){
 				let[a,b]=[this.username,this.password];
 				let info={username:a,password:b};
-				console.log(this.username,this.password);
-				$.post('http://localhost:888/' +  'login', info, function(response){
+				$.post('http://10.3.133.25:888/' +  'login', info, function(response){
+				console.log(response)
 					if(response.status ==false){
 						$.alert(response.message)
 					}else if(response.status ==true){

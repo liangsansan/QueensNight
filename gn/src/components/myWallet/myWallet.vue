@@ -57,27 +57,28 @@
 	import $ from 'jquery'
 	import router from '../../router/index.js'
 
-	console.log($('.wallet-nav >li').eq(0)[0])
-	$('.wallet-nav >li').eq(0).click(function(){console.log(123)})
-	$('.wallet-nav').on('click','>li', function() {
-		console.log(123)
-            //1>清除所有active 隐藏所有图片
-            $('.wallet-nav >li').attr('class', '');
-            $('pocket-content').css('display', 'none');
-            //2>给当前点击的添加active
-            $(this).attr('class', 'active');
-            //3>利用idx显示当前图片 index()搜索匹配的元素，并返回相应元素的索引值，从0开始计数。 
-            $('pocket-content').eq($(this).index()).fadeToggle('slow');
-        })
+	
 	export default {
 		data:function(){
 			return {
 				isActive:'false'
 			}
 		},
+		mounted:function(){
+			$(function(){
+				$('.wallet-nav').on('click','>li', function() {
+					//1>清除所有active 隐藏所有内容
+					$('.wallet-nav >li').attr('class', '');
+					$('.pocket-content').css('display', 'none');
+					//2>给当前点击的添加active
+					$(this).attr('class', 'active');
+					//3>利用idx显示当前图片 index()搜索匹配的元素，并返回相应元素的索引值，从0开始计数。 
+					$('.pocket-content').eq($(this).index()).css('display', 'block');
+				})
+			})
+		},
 		methods:{
 			// toggleItem(eve){
-			// 	console.log(eve)
 			// 	$('.wallet-nav li').attr('class','');
 			// 	$(eve.target).attr('class','active')
 			// }

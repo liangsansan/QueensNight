@@ -42,15 +42,20 @@
 	import router from '../../router/index.js'
 
 	// 如果拿不到用户名 跳转到登录页
-	if(!localStorage.userName){
-		// $.alert('请先登录')
-		// router.push('login')
-	}
+	
 
 	export default {
 		data: function(){
 			return {
 				username:localStorage.userName
+			}
+		},
+		created:function(){
+			console.log(0);
+			if(!localStorage.userName){
+				$.alert('请先登录')
+				router.push('login')
+				// window.location.href = '#/login'
 			}
 		},
 		methods: {
@@ -66,15 +71,15 @@
 				router.push('myWallet')
 			},
 			myStar(){
-				$.alert('我的关注')
+				$.alert('啊!还没关注')
 			},
 			ask(){
-				
 			},
 			showAdd(){
 				router.push('address')
 			},
 			rePsw(){
+				router.push('changePsw')
 			}
 		}
 	}

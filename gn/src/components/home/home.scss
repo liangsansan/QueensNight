@@ -1,0 +1,306 @@
+@import '../../assets/common/global.scss';
+@import '../../assets/iconfont/iconfont.css';
+@import '../../assets/swiper/swiper-3.4.2.min.css';
+// @import '../../assets/animate.min.css';
+
+img[lazy=loading] {
+    /*your style here*/
+    display: block;
+    margin: 0 auto;
+    width: 1.5625rem !important;
+  }
+img[lazy=error] {
+     display: block;
+    margin: 0 auto;
+    width: 1.5625rem !important;
+    /*your style here*/
+  }
+img[lazy=loaded] {
+    width: 100%;
+    /*your style here*/
+  }
+.home_page{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    .home_top{
+        height: 80px; 
+        width: 100%;
+        .home_logo{
+            height: 0.625rem;
+            line-height: 0.625rem;
+            width: 100%;
+            background-image: url('../../assets/ly-use/logo.png');
+            background-size: cover;
+            opacity: 0.8;
+            span{
+                display:block;
+                float: right;
+                margin-right: 0.2344rem;
+                color: red;
+                font-size: 0.2188rem;
+            }
+        }
+        .home_search{
+            height: 0.625rem;
+            background-color:$mainColorw;
+            overflow: hidden;
+            label{
+                span{
+                    display:block;
+                    float: left;
+                    width: 1.25rem;
+                    height: 0.4688rem;
+                    line-height: 0.4688rem;
+                    margin-top: 0.0781rem;
+                    padding:0 0.2344rem;
+                    font-size: 0.25rem;
+                    color:$mainColorr;
+                    
+
+                }
+                input{
+                    display:block;
+                    float: left;
+                    height: 0.4688rem;
+                    width: 3.125rem;
+                    padding-left: 0.1563rem;
+                    margin-top: 0.0781rem;
+                    border-radius: 0.1563rem;
+                    border: 0.0313rem solid $mainColor;
+                    // color:$mainColorr;
+                }
+                i{
+                    display:block;
+                    float: right;
+                    color: $mainColorr;
+                    font-size: 0.375rem;
+                    margin:0.0781rem 0 0 0.0781rem;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .home_body{
+        flex: 1;
+        overflow-y: auto;
+        // background-color: #ccc;
+        .home_banner{
+           img{
+               width: 100%;
+           }
+        }
+        .home_class{
+            width: 100%;
+            ul{
+                text-align: center;
+                // background-color: $mainColor;
+                overflow: hidden;
+                li{
+                    float: left;
+                    width: 25%;
+                    padding: 0.1563rem;
+                    img{
+                        width:100%;
+                    }
+                    p{
+                        margin-top: 0.0781rem;
+                        // color: $mainColorw;
+                    }
+                }
+            }
+        }
+        .home_select{
+            p{
+                line-height: 0.4688rem;
+                text-align: center;
+                font-size: 0.25rem;
+                background-color: $mainColorr;
+                color: $mainColorw;
+                opacity: 0.4;
+            }
+            ul{
+                li{
+                    // height: 40px;
+                    padding: 0.0781rem;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .home_goodsCategory{
+            width: 100%;
+
+             .category_sexy{
+                .category_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    ul{
+                        overflow: hidden;
+                        li{
+                            width: 50%;
+                            padding: 0.0781rem;
+                            float: left;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .category_cup{
+
+                .category_img{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    width:100%;
+                    overflow: hidden;
+                    .left_img{
+                        float: left;
+                        width: 50%;
+                        padding: 0.0781rem;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .right_img{
+                        width: 50%;
+                        float: right;
+                        li{
+                            padding: 0.0781rem;
+                            img{
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .category_skirt{
+                .category_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    ul{
+                        overflow: hidden;
+                        li{
+                            width: 50%;
+                            padding: 0.0781rem;
+                            float: left;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .category_girl{
+
+                .category_img{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    .details_mainImg{
+                        padding: 0.0781rem;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    ul{
+                        li{
+                            width: 50%;
+                            float: left;
+                            padding: 0.0781rem;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+             .category_sweet{
+                .category_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    ul{
+                        overflow: hidden;
+                        li{
+                            width: 50%;
+                            padding: 0.0781rem;
+                            float: left;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .category_top{
+
+                .category_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details_img{
+                    ul{
+                        overflow: hidden;
+                        li{
+                            width: 50%;
+                            padding: 0.0781rem;
+                            float: left;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .home_more{
+            // background-color: $mainColorr;
+            opacity: 0.5;
+            height: 0.4688rem;
+            line-height: 0.4688rem;
+            color: $mainColorr;
+            text-align: center;
+            margin-top: 0.1563rem;
+            margin-bottom: 0.1563rem;
+            font-size: 0.2188rem;
+            font-style: italic;
+            .more_left{
+                display: block;
+                float: left;
+                margin-left: 0.1563rem;
+            }
+            .more_right{
+                display: block;
+                float: right;
+                margin-right: 0.1563rem;
+            }
+        }
+
+    }
+}

@@ -49,6 +49,32 @@ module.exports = {
         })
     },
 
+//修改密码
+resetpsw : function(_collection, data,key,callback){
+	db.open(function(error, db){
+		if(error){
+			console.log('connect db:', error);
+		}
+		//Account => 集合名（表名）
+		db.collection(_collection, function(error, collection){
+			if(error){
+				console.log(error);	
+			} else {
+				collection.find({username:data[key]}).toArray(function(err, docs){
+					console.log(docs)
+					if(docs[0]){
+						collection.update({username:data[key]},{$set:{password:data.password}});
+						callback(docs);
+						db.close();
+					}else{
+						callback(null);
+						db.close();
+					}
+				});
+			}
+		})
+	})	
+},
     // id查询商品
     getProduct : function(_collection, data, key, callback){
         db.open(function(error, db){
@@ -76,27 +102,33 @@ module.exports = {
 
      //关键字搜索
     getProductsBykeyword:function(_collection, data, key, callback){
+
         db.open(function(error, db){
             if(error){
                 console.log('connect db:', error);
 		    }
             //_collection=>cake => 集合名（表名）
+
             db.collection(_collection, function(error, collection){
                 if(error){
-                    console.log(error)	
+                    console.log(error)  
                 } else {
-                    var obj = {};
-                    obj[key] = data[key];
-                    collection.find(obj).toArray(function(err, docs){
-                        if (docs.length>=1) {
-                            callback(docs);
-                        }else{
-                            callback();
-                        }
-                    })
+                       
+                    collection.find().toArray(function(err, docs){
+                        var findarr=[];
+                        docs.forEach(function(item){
+                             var str=data[key] 
+                                if(((item.qnTitle).indexOf(str)>-1 )||((item.qnOccasion).indexOf(str)>-1)||((item.qnHomeClass).indexOf(str)>-1)||((item.qnDetailsType).indexOf(str)>-1)){
+                                    findarr.push(item);
+                                }
+                            
+                        })
+                        callback(findarr);
+                    });
                 }
                 db.close();
             })
+
         })
     },
 
@@ -127,7 +159,6 @@ module.exports = {
                 })
             })
         })
-
     },
     //删除商品
     del:function(_collection,data,callback){
@@ -147,5 +178,32 @@ module.exports = {
                 db.close();
             })
         })	
-    }
+
+    },
+    exists:function(_collection, data, arr, callback){
+            db.open(function(error, db){
+                var obj = {};
+                // arr.forEach(function (ele) {
+                // 	//obj = data
+                // 	obj[ele] = data[ele]? data[ele] : '';
+        //       });
+
+                db.collection(_collection, function(error, collection){
+                    if(error){
+                        
+                        console.log(error)
+                    } else {
+
+                        collection.find().toArray(function(err, docs){
+                            //docs就是所有的数据,并且是一个数组,obj = {}.
+                            console.log(1);
+                            callback(docs);
+                        });
+                    }
+                     db.close();
+                });
+            })
+    },
+
+
 }

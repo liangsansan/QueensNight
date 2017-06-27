@@ -5,7 +5,7 @@ import Vue from 'vue'
 import router from '../../router/index'
 
 const state = {
-    
+    data:''
 }
 
 const mutations = {
@@ -25,16 +25,11 @@ const mutations = {
 	search:(data,formData)=>{
 			http.get('search', formData)
 			.then(response => {
-				this.state.data=response.data;
+				this.state.data=response;
+				state.data=response.data;
 				router.push({name: 'list',params:{formData}})
 			})
-	},
-	homeInfo:(data,formData)=>{
-		http.get('homeInfo', formData)
-			.then(response => {
-				this.state.data=response.data;
-				router.push({name: 'home',params:{formData}})
-			})
+
 	}
 
 }
@@ -42,9 +37,6 @@ const mutations = {
 const actions = {
 	search: (events, formData) => {
 		events.commit('search', formData)
-	},
-	homeInfo:(events,formData)=>{
-		events.commit('homeInfo',formData)
 	}
 }
 

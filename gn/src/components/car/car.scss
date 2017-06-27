@@ -4,6 +4,8 @@
 
 
 .car_all{
+    // position: relative;
+    height: 100%;
     .all_check,.check{
         display: inline-block;
         width: 17px;
@@ -17,17 +19,22 @@
         background-color: $mainColor;
     }
     .car_top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 500;
         height: 40px;
         line-height: 40px;
         background-color: $mainColor;
         color: $mainColorw;
-        i{ margin-left: 10px; float: left; font-size: 23px;}
+        i{ margin-left: 10px; float: left; font-size: 0.4375rem;}
         p{margin: 0 34px; font-size: 15px;text-align: center;}
     }
     .car_main{
+        margin-top: 40px;
         height: 100%;
         .car_msg{
-            display: none;
+            // display: none;
             text-align: center;
             height: 200px;
             margin-top: 100px;
@@ -40,8 +47,12 @@
                 height: 40px;
                 line-height: 40px;
                 padding: 0 10px;
-                font-size: 14px;
+                font-size: 13px;
                 background-color: #f5f5f5;
+                .unall_check{
+                    margin-left: 6px;
+                    color: $mainColor;
+                }
             }
         }
         .car_list{
@@ -117,7 +128,7 @@
     .car_total{
         position: fixed;
         bottom:65px;
-        // background-color:$mainColorc;
+        z-index: 600;
         height: 40px;
         width: 100%;
         font-size: 13px;
@@ -127,6 +138,7 @@
             padding-left: 5px;
             height: 40px;
             color:$mainColorw;
+            position: relative;
             i{font-size: 28px; color:$mainColor;}
             .total_msg{
                 margin-left: 0px;
@@ -135,7 +147,14 @@
             }
             .total_price{
                 color: $mainColorc1;
+                // display: block;
+                position: absolute;
+                width: 120px;
+                top: 17px;
                 font-size: 13px;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                white-space: nowrap;
                 &::before{
                     content: '￥';
                 }
@@ -157,6 +176,59 @@
             text-align: center;
             color:$mainColorw;
             background-color: $mainColorr;
+        }
+    }
+    .car_window{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding-top: 200px;
+        .ask{
+            width: 70%;
+            border-radius: 4px;
+            height: 100px;
+            background-color: #f5f5f5;
+            margin: 0 auto;
+            text-align: right;
+            .ask_close{
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1;
+                margin-right: 8px;
+                padding-top: 5px;
+                color: $mainColor;
+                text-shadow: 0 1px 0 #fff;
+            }
+            .ask_text{
+                padding-top: 6px;
+                text-align: center;
+                color:$mainColorc1;
+            }
+            .ask_btn{
+                padding-top: 10px;
+                span{
+                    border-radius: 10%;
+                    display: block;
+                    width: 26%;
+                    text-align: center;
+                    height: 20px;
+                    line-height: 20px;
+                    background-color: $mainColor;
+                    color: $mainColorw;
+                    font-size: 12px;
+                }
+                .ask_yes{
+                    float: left;
+                    margin-left: 15%;
+                }
+                .ask_no{
+                    float: right;
+                    margin-right: 15%;
+                }
+            }
         }
     }
 }
