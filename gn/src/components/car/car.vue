@@ -19,7 +19,7 @@
                     <ul id="list_content">
                         <li v-for="(item, index) in products">
                             <span class="check" @click="selectGood(item)" :class="{check_click:item.isChecked}"></span>
-                            <img src="../../assets/imgs/01.jpg" alt="">
+                            <img :src="imgUrl + item.imgUrl" alt="">
                             <span class="car_title">{{item.title}}</span>
                             <span class="car_color">颜色：{{item.color}}</span>
                             <span class="car_chima">尺码：{{item.size}}</span>
@@ -63,7 +63,7 @@
     import './car.js'
     import $ from 'jquery'
     import http from '../../utils/HttpClient'
-
+    import Base from '../../../global.js'
     export default {
         
         components:{
@@ -73,7 +73,8 @@
             return{
                 products:[],
                 isSelectAll:false,
-                askDelete:false
+                askDelete:false,
+                imgUrl:Base.imgUrl,
             }
         },
         methods:{

@@ -142,6 +142,7 @@ export default {
                     size:'',
                     color:'',
                     num:1,
+                    imgUrl:'',
                 }
 			}
 		},
@@ -174,9 +175,10 @@ export default {
                 if(this.selectColor == '' || this.selectZize==''){
                     alert('请选择颜色或尺码');
                 }else{
+                    alert('购买成功');
                     this.buyDetails.title = this.res.qnTitle;
                     this.buyDetails.price = this.res.qnDiscountPrices;
-                
+                    this.buyDetails.imgUrl = this.res.qnDetailsImg[0];
                     if(!localStorage.buy){
                         var aa = [];
                         aa.push(this.buyDetails);
