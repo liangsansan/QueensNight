@@ -102,20 +102,13 @@ resetpsw : function(_collection, data,key,callback){
 
      //关键字搜索
     getProductsBykeyword:function(_collection, data, key, callback){
-<<<<<<< HEAD
+
         db.open(function(error, db){
             if(error){
                 console.log('connect db:', error);
 		    }
             //_collection=>cake => 集合名（表名）
-=======
-          
-        db.open(function(error, db){
-            if(error){
-                console.log('connect db:', error);
-            }
-            //Account => 集合名（表名）
->>>>>>> ly
+
             db.collection(_collection, function(error, collection){
                 if(error){
                     console.log(error)  
@@ -135,7 +128,7 @@ resetpsw : function(_collection, data,key,callback){
                 }
                 db.close();
             })
-<<<<<<< HEAD
+
         })
     },
 
@@ -185,10 +178,8 @@ resetpsw : function(_collection, data,key,callback){
                 db.close();
             })
         })	
-=======
-        })  
 
->>>>>>> ly
+
     }
 
 }
