@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
 import $ from 'jquery'
-import './zhekou.scss'
+import '../wenxiong/wenxiong.scss'
 import base from'../../../../global.js'
 	export default {
 		components: {
@@ -29,9 +29,9 @@ import base from'../../../../global.js'
 		data(){
 			return {
 				res:{},
-				classify:'折扣',
+				classify:'折扣专区',
 				da:'',
-				src1:base.base,
+				src1:base.imgUrl,
 				
 			}
 		},
@@ -52,9 +52,10 @@ import base from'../../../../global.js'
  		 	}
 		},																				
 		created(){
-			$.post('http://localhost:888/getProduct',[],function(res){
+			$.post('http://localhost:888/getProduct1',[],function(res){
 				var aa = [];
 				for(var i = 0;i<=res.length-1;i++){
+					console.log(res);
 					if(res[i].qnHomeClass == this.classify){
 						aa.push(res[i]);
 					}

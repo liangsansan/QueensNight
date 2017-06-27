@@ -37,10 +37,10 @@
 			<div class="home_class">
 				<ul>
 
-					<li  @click="$router.push({name:'list',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
-					<li  @click="$router.push({name:'list',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
+					<li  @click="$router.push({name:'wenxiong',query:{keyword:'新款'}})"><img src="../../assets/ly-use/new.png" alt=""><p>新款专区</p></li>
+					<li  @click="$router.push({name:'yongyi',query:{keyword:'爆款'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>爆款专区</p></li>
+					<li  @click="$router.push({name:'zhekou',query:{keyword:'折扣'}})"><img src="../../assets/ly-use/new.png" alt=""><p>折扣专区</p></li>
+					<li  @click="$router.push({name:'neiku',query:{keyword:'特惠'}})"><img src="../../assets/ly-use/hot.png" alt=""><p>特惠专区</p></li>
 
 				</ul>
 			</div>
