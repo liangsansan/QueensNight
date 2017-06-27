@@ -1,5 +1,5 @@
 node_modules/
-*.txt
+
 *.xls
 api/node_modules/
 gn/node_modules/

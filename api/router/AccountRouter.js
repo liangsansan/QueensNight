@@ -99,9 +99,10 @@ app.post('/resetpsw',urlencodedParser,function(req,res){
     });
 
     //添加商品(上传图片)
-    app.post('/addProducts', upload.fields([{ name:'qnDetailsImg', maxCount: 10 },{name: 'qnDetailsTextImg',maxCount: 10}]), function(request, response) {
+    app.post('/addProducts', upload.fields([{ name:'qnDetailsImg', maxCount: 10 },{ name:'qnHomeList', maxCount: 10 },{name: 'qnDetailsTextImg',maxCount: 10}]), function(request, response) {
         var bannerImg = [];
         var detailsImg = [];
+        var homeList = [];
         if(request.files.qnDetailsImg){
             request.files.qnDetailsImg.map(function(item,index){
                 return bannerImg.push(item.filename)
@@ -113,6 +114,12 @@ app.post('/resetpsw',urlencodedParser,function(req,res){
                 return detailsImg.push(item.filename)
             })
             request.body.qnDetailsTextImg = detailsImg;
+        }
+        if(request.files.qnHomeList){
+            request.files.qnHomeList.map(function(item,index){
+                return homeList.push(item.filename)
+            })
+            request.body.qnHomeList = homeList;
         }
         console.log(request.body)
         DB.addProducts('products', request.body, 'qnTitle', function(data){
